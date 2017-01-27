@@ -64,6 +64,5 @@ D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\Microsoft.Owin.Secur
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\Microsoft.Owin.Security.Google.xml
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\Microsoft.Owin.Security.Twitter.xml
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csprojResolveAssemblyReference.cache
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.dll
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.pdb
