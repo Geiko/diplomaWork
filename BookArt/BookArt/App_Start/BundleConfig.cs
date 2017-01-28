@@ -26,14 +26,14 @@ namespace BookArt
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       //"~/Content/site.css",
-                      "~/Content/CSS/style.css"));
+                      "~/Content/CSS/style_home.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3js").Include(
                       "~/Scripts/d3/d3.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/animate").Include(
-                      "~/Scripts/JS/charK.js",
-                      "~/Scripts/JS/addText.js"));
+                      "~/Scripts/JS/animateChar.js",
+                      "~/Scripts/JS/appearText.js"));
         }
     }
 }
