@@ -189,6 +189,7 @@
     <Content Include="Content\CSS\style_about_yourself.css" />
     <Content Include="Content\CSS\style_projects.css" />
     <Content Include="Content\CSS\style_write.css" />
+    <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\fon_slide1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -200,6 +201,9 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Scripts\d3\d3.js" />
+    <Content Include="Scripts\d3\d3.min.js" />
+    <Content Include="Scripts\d3\LICENSE" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

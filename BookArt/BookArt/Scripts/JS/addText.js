@@ -1,4 +1,6 @@
-setTimeout (addName, picture.durationK + picture.durationT - 1000);
+
+
+setTimeout(addName, picture.durationK + picture.durationT - 1000);
 setTimeout (addMenu, picture.durationK + picture.durationT);
 setTimeout (addArrow, picture.durationK + picture.durationT + 1000);
 
@@ -14,5 +16,5 @@ function addMenu (){
 };
 
 function addArrow (){
-	$('#aArrow').html('<img src="img/arrow.png" alt="arrow" />');
+	$('#aArrow').html('<img src="Content/Images/arrow.png" alt="arrow" />');
 };
