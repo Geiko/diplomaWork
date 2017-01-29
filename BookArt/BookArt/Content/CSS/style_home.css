@@ -127,10 +127,10 @@ svg{
 }
 
 .enterSession{
-	border: 1px solid blue; 
+	border: 1px solid blue;   
     display: none !important; 
 }
 
 #loginLink{
-    color: red !important; 
+    color: red !important;
 }
