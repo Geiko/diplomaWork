@@ -185,6 +185,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\animate.min.css" />
     <Content Include="Content\CSS\style_home.css" />
     <Content Include="Content\CSS\style_about_yourself.css" />
     <Content Include="Content\CSS\style_projects.css" />
@@ -214,6 +215,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\JS\appearText.js" />
     <Content Include="Scripts\JS\animateChar.js" />
+    <Content Include="Scripts\JS\magicAnimation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
