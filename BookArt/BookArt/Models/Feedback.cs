@@ -1,132 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace BookArt.Models
 {
     public class Feedback
     {
+        private const int MAX_USER_EMAIL = 300;
+        private const int MAX_CONTENT = 300;
+
         public int Id { get; set; }
 
+        private string _usersEmail;
+        private string _content;
 
-        //private string _usersEmail;
+        /// <summary>
+        /// Gets or sets users email. 
+        /// </summary>
+        public string UsersEmail
+        {
+            get
+            {
+                return _usersEmail;
+            }
 
-        //private string _content;
-        //private string _userEnvironment;
+            set
+            {
+                if (string.IsNullOrEmpty(value) || value.Length > MAX_USER_EMAIL)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        string.Format($"User email isn't valid - //{value}//"));
+                }
 
-        //private FeedbackStatusEnum _status;
-        
-        ///// <summary>
-        ///// Gets or sets users email.
-        ///// </summary>
-        //public string UsersEmail
-        //{
-        //    get
-        //    {
-        //        return _usersEmail;
-        //    }
+                _usersEmail = value;
+            }
+        }
 
-        //    set
-        //    {
-        //        if (FeedbackValidation.ValidateUsersEmail(value))
-        //        {
-        //            throw new ArgumentException(
-        //                string.Format(
-        //                    Resources.ValidationFeedbackUsersEmail,
-        //                    VolleyManagement.Domain.Constants.Feedback.MAX_EMAIL_LENGTH),
-        //                    Resources.FeedbackUsersEmailParam);
-        //        }
+        /// <summary>
+        /// Gets or sets feedback content.
+        /// </summary>
+        public string Content
+        {
+            get
+            {
+                return _content;
+            }
 
-        //        _usersEmail = value;
-        //    }
-        //}
+            set
+            {
+                if (string.IsNullOrEmpty(value) || value.Length > MAX_CONTENT)
+                {
+                    throw new ArgumentException(
+                        string.Format($"Feedback content isn't valid - //{value}//"));
+                }
 
-        ///// <summary>
-        ///// Gets or sets feedback content.
-        ///// </summary>
-        //public string Content
-        //{
-        //    get
-        //    {
-        //        return _content;
-        //    }
+                _content = value;
+            }
+        }
 
-        //    set
-        //    {
-        //        if (FeedbackValidation.ValidateContent(value))
-        //        {
-        //            throw new ArgumentException(
-        //                 string.Format(
-        //                    Resources.ValidationFeedbackContent,
-        //                    VolleyManagement.Domain.Constants.Feedback.MAX_CONTENT_LENGTH),
-        //                    Resources.FeedbackContentParam);
-        //        }
-
-        //        _content = value;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Gets or sets date of feedback.
-        ///// </summary>
-        //public DateTime Date { get; set; }
-
-        ///// <summary>
-        ///// Gets or sets user environment.
-        ///// </summary>
-        //public string UserEnvironment
-        //{
-        //    get
-        //    {
-        //        return _userEnvironment;
-        //    }
-
-        //    set
-        //    {
-        //        if (FeedbackValidation.ValidateUserEnvironment(value))
-        //        {
-        //            throw new ArgumentException(
-        //                 string.Format(
-        //                    Resources.ValidationFeedbackUserEnvironment,
-        //                    Constants.Feedback.MAX_USER_ENVIRONMENT_LENGTH),
-        //                    Resources.FeedbackUserEnvironmentParam);
-        //        }
-
-        //        _userEnvironment = value;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Gets or sets feedback status.
-        ///// </summary>
-        //public FeedbackStatusEnum Status
-        //{
-        //    get
-        //    {
-        //        return _status;
-        //    }
-
-        //    set
-        //    {
-        //        if (FeedbackValidation.ValidateStatus(_status, value))
-        //        {
-        //            throw new InvalidOperationException(
-        //                Resources.ValidationFeedbackStatus);
-        //        }
-
-        //        _status = value;
-        //    }
-        //}
-
-        ///// <summary>
-        ///// Gets or sets update date of feedback.
-        ///// </summary>
-        //public DateTime UpdateDate { get; set; }
-
-        ///// <summary>
-        ///// Gets or sets admin name.
-        ///// </summary>
-        //public string AdminName { get; set; }
+        /// <summary>
+        /// Gets or sets date of feedback.
+        /// </summary>
+        public DateTime Date { get; set; }
     }
 }

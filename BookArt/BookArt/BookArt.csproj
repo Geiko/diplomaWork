@@ -182,7 +182,6 @@
     <Compile Include="Models\AppDbInitializer.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookArtDBContext.cs" />
-    <Compile Include="Models\BookDbInitializer.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
