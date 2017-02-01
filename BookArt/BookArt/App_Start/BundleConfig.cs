@@ -25,20 +25,26 @@ namespace BookArt
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      //"~/Content/site.css",
-                      "~/Content/CSS/style_home.css",
+                      "~/Content/site.css",
+                      "~/Content/CSS/style_home5.css",
+                      "~/Content/CSS/style_about_yourself1.css",
+                      "~/Content/CSS/style_projects1.css",
+                      "~/Content/CSS/style_paginator.css",                      
                       "~/Content/CSS/animate.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3js").Include(
                       "~/Scripts/d3/d3.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/magicAnimate").Include(
-                      ));
+            bundles.Add(new ScriptBundle("~/bundles/deleteMenu").Include(
+                      "~/Scripts/Home/deleteMenu.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/animate").Include(
-                      "~/Scripts/JS/magicAnimation.js",
-                      "~/Scripts/JS/animateChar.js",
-                      "~/Scripts/JS/appearText.js"));
+                      "~/Scripts/Home/magicAnimation.js",
+                      "~/Scripts/Home/animateChar1.js",
+                      "~/Scripts/Home/appearText3.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/paginator").Include(
+                      "~/Scripts/Projects/paginator.js"));
         }
     }
 }

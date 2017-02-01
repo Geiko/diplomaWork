@@ -6,31 +6,41 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/d3js")
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/d3js")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 
 </head>
 <body>
-    <div class="navbar navbar-fixed-top registerMenu">
+    <div class="navbar navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                @*@Html.ActionLink("Коламбіа Пикчерз не уявляє"// (Book Art Designer)"
-               , "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
-            <div class="navbar-collapse collapse">
-                @*<ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>*@
 
-                @*@Html.Partial("_LoginPartial")*@
+            <div class="navbar-header menuDelete">
+                <a href='@Url.Action("Index", "Home")'>
+                    <img class="logo1" src="/Content/Images/logo_mini.jpg" alt="logo_mini" width="300" height="100" />
+                </a>
             </div>
+
+            <div class="navbar-header menuDelete">
+                @Html.ActionLink("Головна", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav menuDelete">
+                    <li>@Html.ActionLink("Проекти", "Index", "Project")</li>
+                    <li>@Html.ActionLink("Про себе", "About", "Home")</li>
+                    <li>@Html.ActionLink("Написати", "Index", "Contact")</li>
+                </ul>
+
+                @Html.Partial("_LoginPartial")
+            </div>
+
         </div>
     </div>
 
     @RenderBody()
+
+    @*<p class="footer menuDelete"> &copy; @DateTime.Now.Year - Дніпро, Україна</p>*@
 
     @RenderSection("scripts", required: false)
 </body>

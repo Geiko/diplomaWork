@@ -9,32 +9,22 @@ namespace BookArt.Controllers
 {
     public class HomeController : Controller
     {
-        private int isFirstEnter = 1;
-
         public ActionResult Index()
         {
             if (Session["Enter"] == null)
             {
-                Session["Enter"] = "NotFirst";
-                ViewBag.Enter = isFirstEnter;
+                Session["Enter"] = "First";
+                ViewBag.Enter = 1;
                 return View();
             }
-
-            isFirstEnter = 0;
-            ViewBag.Enter = isFirstEnter;
+            
+            ViewBag.Enter = 0;
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
 
             return View();
         }

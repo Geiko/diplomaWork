@@ -20,6 +20,13 @@
 	position: relative;
 }
 
+.wrapper_2{
+	height: 100%;
+	background: #020202 url('../../Content/Images/fon_slide2.jpg') no-repeat center center;
+	background-size: auto 100%;
+	/*border: 1px solid yellow;*/
+}
+
 .charK{
 
 	/*border: 1px solid violet;*/
@@ -113,10 +120,6 @@ svg{
 	height: auto;
 }
 
-.registerMenu{
-    /*color: white;*/
-}
-
 .footer{
     color: #A19B98;
     position: absolute;
@@ -131,6 +134,6 @@ svg{
     display: none !important; 
 }
 
-#loginLink{
-    color: red !important;
-}
+/*#loginLink, #registerLink, .appName, .projectName, .aboutName, .contactName{
+    color: white !important; 
+}*/
