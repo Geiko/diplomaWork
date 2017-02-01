@@ -5,7 +5,7 @@ namespace BookArt.Models
     public class Feedback
     {
         private const int MAX_USER_EMAIL = 300;
-        private const int MAX_CONTENT = 300;
+        private const int MAX_CONTENT = 5000;
 
         public int Id { get; set; }
 
