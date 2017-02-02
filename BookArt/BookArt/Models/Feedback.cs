@@ -1,60 +1,30 @@
 ﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookArt.Models
 {
     public class Feedback
     {
-        private const int MAX_USER_EMAIL = 300;
-        private const int MAX_CONTENT = 5000;
-
         public int Id { get; set; }
-
-        private string _usersEmail;
-        private string _content;
-
+        
         /// <summary>
         /// Gets or sets users email. 
         /// </summary>
-        public string UsersEmail
-        {
-            get
-            {
-                return _usersEmail;
-            }
-
-            set
-            {
-                if (string.IsNullOrEmpty(value) || value.Length > MAX_USER_EMAIL)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        string.Format($"User email isn't valid - //{value}//"));
-                }
-
-                _usersEmail = value;
-            }
-        }
+        [DisplayName("Ваша єлектронна поштова скринька")]
+        [Required(ErrorMessage = "Будь ласка, обов'язково заповніть це поле")]
+        [EmailAddress(ErrorMessage = "Єлектронна поштова адреса введена не вірно")]
+        [StringLength(80)]
+        public string UsersEmail { get; set; }    
 
         /// <summary>
         /// Gets or sets feedback content.
         /// </summary>
-        public string Content
-        {
-            get
-            {
-                return _content;
-            }
-
-            set
-            {
-                if (string.IsNullOrEmpty(value) || value.Length > MAX_CONTENT)
-                {
-                    throw new ArgumentException(
-                        string.Format($"Feedback content isn't valid - //{value}//"));
-                }
-
-                _content = value;
-            }
-        }
+        [DisplayName("Поле для заповнення")]
+        [Required(ErrorMessage = "Будь ласка, обов'язково заповніть це поле")]
+        [StringLength(5000)]
+        [DataType(DataType.MultilineText)]
+        public string Content { get; set; }
 
         /// <summary>
         /// Gets or sets date of feedback.

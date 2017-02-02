@@ -135,3 +135,8 @@ D:\My\IT\STEP\25. DIPLOM\BookArt\BookArt\bin\Microsoft.Owin.Security.MicrosoftAc
 D:\My\IT\STEP\25. DIPLOM\BookArt\BookArt\obj\Debug\BookArt.dll
 D:\My\IT\STEP\25. DIPLOM\BookArt\BookArt\obj\Debug\BookArt.pdb
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csprojResolveAssemblyReference.cache
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Seed1.resources
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csproj.GenerateResource.Cache
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating.resources
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating1.resources
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating2.resources

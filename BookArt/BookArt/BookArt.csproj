@@ -169,15 +169,33 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageFeedbacksController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702011654007_Seed1.cs" />
+    <Compile Include="Migrations\201702011654007_Seed1.Designer.cs">
+      <DependentUpon>201702011654007_Seed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011913599_Rating.cs" />
+    <Compile Include="Migrations\201702011913599_Rating.Designer.cs">
+      <DependentUpon>201702011913599_Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020859435_Rating1.cs" />
+    <Compile Include="Migrations\201702020859435_Rating1.Designer.cs">
+      <DependentUpon>201702020859435_Rating1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020901113_Rating2.cs" />
+    <Compile Include="Migrations\201702020901113_Rating2.Designer.cs">
+      <DependentUpon>201702020901113_Rating2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbInitializer.cs" />
     <Compile Include="Models\Book.cs" />
@@ -203,18 +221,19 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\animate.min.css" />
     <Content Include="Content\CSS\style_home5.css" />
-    <Content Include="Content\CSS\style_about_yourself1.css" />
+    <Content Include="Content\CSS\style_about_yourself3.css" />
     <Content Include="Content\CSS\style_paginator.css" />
-    <Content Include="Content\CSS\style_projects1.css" />
+    <Content Include="Content\CSS\style_projects3.css" />
     <Content Include="Content\CSS\style_write.css" />
     <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\fon_slide1.jpg" />
     <Content Include="Content\Images\fon_slide2.jpg" />
+    <Content Include="Content\Images\KostPhoto.JPG" />
     <Content Include="Content\Images\logo_mini.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\Site1.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -224,7 +243,14 @@
     <Content Include="Scripts\d3\d3.js" />
     <Content Include="Scripts\d3\d3.min.js" />
     <Content Include="Scripts\d3\LICENSE" />
+    <Content Include="Areas\Admin\Views\ManageFeedbacks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageFeedbacks\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageFeedbacks\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageFeedbacks\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageFeedbacks\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Feedback\BackButton.js" />
+    <Content Include="Scripts\Feedback\RecaptchaVerification.js" />
     <Content Include="Scripts\Home\deleteMenu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -253,7 +279,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -276,12 +301,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Books\Create.cshtml" />
     <Content Include="Views\Books\Delete.cshtml" />
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Feedbacks\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -294,6 +319,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702011654007_Seed1.resx">
+      <DependentUpon>201702011654007_Seed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011913599_Rating.resx">
+      <DependentUpon>201702011913599_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020859435_Rating1.resx">
+      <DependentUpon>201702020859435_Rating1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020901113_Rating2.resx">
+      <DependentUpon>201702020901113_Rating2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

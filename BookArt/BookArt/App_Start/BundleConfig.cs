@@ -25,10 +25,10 @@ namespace BookArt
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
+                      "~/Content/site1.css",
                       "~/Content/CSS/style_home5.css",
-                      "~/Content/CSS/style_about_yourself1.css",
-                      "~/Content/CSS/style_projects1.css",
+                      "~/Content/CSS/style_about_yourself3.css",
+                      "~/Content/CSS/style_projects3.css",
                       "~/Content/CSS/style_paginator.css",                      
                       "~/Content/CSS/animate.min.css"));
 
@@ -37,6 +37,11 @@ namespace BookArt
 
             bundles.Add(new ScriptBundle("~/bundles/deleteMenu").Include(
                       "~/Scripts/Home/deleteMenu.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/feedbackscripts").Include(
+                      "~/Scripts/Feedback/RecaptchaVerification.js",
+                      "~/Scripts/Feedback/BackButton.js"));
+            
 
             bundles.Add(new ScriptBundle("~/bundles/animate").Include(
                       "~/Scripts/Home/magicAnimation.js",

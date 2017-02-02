@@ -16,14 +16,5 @@ namespace BookArt.Controllers
         {
             return View(db.Books.ToList());  
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

@@ -9,5 +9,6 @@ namespace BookArt.Models
     public class BookArtDBContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }
