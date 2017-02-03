@@ -28,7 +28,7 @@ namespace BookArt
                       "~/Content/site1.css",
                       "~/Content/CSS/style_home5.css",
                       "~/Content/CSS/style_about_yourself3.css",
-                      "~/Content/CSS/style_projects3.css",
+                      "~/Content/CSS/style_projects4.css",
                       "~/Content/CSS/style_paginator.css",                      
                       "~/Content/CSS/animate.min.css"));
 
