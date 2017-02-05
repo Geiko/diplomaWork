@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<BookArt.Models.Book>
+@model IEnumerable<BookArt.Models.Section>
 
 @{
     ViewBag.Title = "Index";
@@ -99,10 +99,13 @@
             </div>
                                 }
 
-        <div class="pagination"></div>
+        <div class="pagination"></div> 
 
     </div>
 
+    <div class="row footer animate1">
+        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+    </div>
 
 </div>
 

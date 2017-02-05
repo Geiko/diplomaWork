@@ -9,6 +9,8 @@
     @Scripts.Render("~/bundles/d3js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/menuActive")
 
 </head>
 <body>
@@ -17,7 +19,7 @@
 
             <div class="navbar-header menuDelete">
                 <a href='@Url.Action("Index", "Home")'>
-                    <img class="logo1" src="/Content/Images/logo_mini.jpg" alt="logo_mini" width="300" height="100" />
+                    <img class="logo1" src="/Content/Images/logo_mini.jpg" alt="logo_mini" width="300" height="100" /> 
                 </a>
             </div>
 
@@ -26,7 +28,7 @@
             </div>
 
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav menuDelete">
+                <ul class="nav navbar-nav menuDelete" id="menuActive">
                     <li>@Html.ActionLink("Проекти", "Index", "Project")</li>
                     <li>@Html.ActionLink("Про себе", "About", "Home")</li>
                     <li>@Html.ActionLink("Написати", "Create", "Feedbacks")</li>

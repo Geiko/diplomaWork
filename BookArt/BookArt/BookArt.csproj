@@ -171,7 +171,6 @@
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageFeedbacksController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -179,61 +178,51 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702011654007_Seed1.cs" />
-    <Compile Include="Migrations\201702011654007_Seed1.Designer.cs">
-      <DependentUpon>201702011654007_Seed1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702011913599_Rating.cs" />
-    <Compile Include="Migrations\201702011913599_Rating.Designer.cs">
-      <DependentUpon>201702011913599_Rating.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702020859435_Rating1.cs" />
-    <Compile Include="Migrations\201702020859435_Rating1.Designer.cs">
-      <DependentUpon>201702020859435_Rating1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702020901113_Rating2.cs" />
-    <Compile Include="Migrations\201702020901113_Rating2.Designer.cs">
-      <DependentUpon>201702020901113_Rating2.cs</DependentUpon>
+    <Compile Include="Migrations\201702031435255_Seed1.cs" />
+    <Compile Include="Migrations\201702031435255_Seed1.Designer.cs">
+      <DependentUpon>201702031435255_Seed1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbInitializer.cs" />
-    <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\BookArtDBContext.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\Section.cs" />
+    <Compile Include="Models\SectionDBContext.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Work.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Books\10\Cover.jpg" />
-    <Content Include="Content\Books\1\Cover.jpg" />
-    <Content Include="Content\Books\2\Cover.jpg" />
-    <Content Include="Content\Books\3\Cover.jpg" />
-    <Content Include="Content\Books\4\Cover.jpg" />
-    <Content Include="Content\Books\5\Cover.jpg" />
-    <Content Include="Content\Books\6\Cover.jpg" />
-    <Content Include="Content\Books\7\Cover.jpg" />
-    <Content Include="Content\Books\8\Cover.jpg" />
-    <Content Include="Content\Books\9\Cover.jpg" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\Sections\1\Cover.jpg" />
+    <Content Include="Content\Images\Sections\2\Cover.jpg" />
+    <Content Include="Content\Images\Sections\3\Cover.jpg" />
+    <Content Include="Content\Images\Sections\4\Cover.jpg" />
+    <Content Include="Content\Images\Sections\5\Cover.jpg" />
+    <Content Include="Content\Images\Sections\6\Cover.jpg" />
+    <Content Include="Content\Images\Sections\7\Cover.jpg" />
+    <Content Include="Content\Images\Sections\8\Cover.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\animate.min.css" />
     <Content Include="Content\CSS\style_home5.css" />
     <Content Include="Content\CSS\style_about_yourself3.css" />
     <Content Include="Content\CSS\style_paginator.css" />
-    <Content Include="Content\CSS\style_projects4.css" />
+    <Content Include="Content\CSS\style_projects5.css" />
     <Content Include="Content\CSS\style_write.css" />
     <Content Include="Content\Images\arrow.png" />
     <Content Include="Content\Images\fon_slide1.jpg" />
     <Content Include="Content\Images\fon_slide2.jpg" />
     <Content Include="Content\Images\KostPhoto.JPG" />
     <Content Include="Content\Images\logo_mini.jpg" />
+    <Content Include="Content\Images\Works\1\Cover.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site1.css" />
+    <Content Include="Content\Site3.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -250,8 +239,10 @@
     <Content Include="Areas\Admin\Views\ManageFeedbacks\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
-    <Content Include="Scripts\Feedback\RecaptchaVerification.js" />
+    <Content Include="Scripts\Feedback\GetSendResult.js" />
+    <Content Include="Scripts\Feedback\RecaptchaVerification1.js" />
     <Content Include="Scripts\Home\deleteMenu.js" />
+    <Content Include="Scripts\Home\menuActive1.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -259,7 +250,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Home\appearText3.js" />
+    <Content Include="Scripts\Home\appearText4.js" />
     <Content Include="Scripts\Home\animateChar1.js" />
     <Content Include="Scripts\Home\magicAnimation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -301,16 +292,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Project\Index.cshtml" />
-    <Content Include="Views\Books\Create.cshtml" />
-    <Content Include="Views\Books\Delete.cshtml" />
-    <Content Include="Views\Books\Details.cshtml" />
-    <Content Include="Views\Books\Edit.cshtml" />
-    <Content Include="Views\Books\Index.cshtml" />
     <Content Include="Views\Feedbacks\Create.cshtml" />
+    <Content Include="Views\Shared\NoInternet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\Images\Pages\" />
+    <Folder Include="Content\Images\Works\2\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -321,17 +310,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702011654007_Seed1.resx">
-      <DependentUpon>201702011654007_Seed1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702011913599_Rating.resx">
-      <DependentUpon>201702011913599_Rating.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702020859435_Rating1.resx">
-      <DependentUpon>201702020859435_Rating1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702020901113_Rating2.resx">
-      <DependentUpon>201702020901113_Rating2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702031435255_Seed1.resx">
+      <DependentUpon>201702031435255_Seed1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

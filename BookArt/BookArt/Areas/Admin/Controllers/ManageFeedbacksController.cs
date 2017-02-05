@@ -13,7 +13,7 @@ namespace BookArt.Areas.Admin.Controllers
     [Authorize(Roles = "admin")]
     public class ManageFeedbacksController : Controller
     {
-        private BookArtDBContext db = new BookArtDBContext();
+        private SectionDBContext db = new SectionDBContext();
 
         // GET: Admin/ManageFeedbacks
         public ActionResult Index()

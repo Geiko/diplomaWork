@@ -9,12 +9,12 @@ namespace BookArt.Controllers
 {
     public class ProjectController : Controller
     {
-        private BookArtDBContext db = new BookArtDBContext();
+        private SectionDBContext db = new SectionDBContext();
 
         // GET: Books
         public ActionResult Index()
         {
-            return View(db.Books.ToList());  
+            return View(db.Sections.ToList());
         }
     }
 }

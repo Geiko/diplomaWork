@@ -16,7 +16,7 @@ namespace BookArt.Controllers
 {
     public class FeedbacksController : Controller
     {
-        private BookArtDBContext db = new BookArtDBContext();
+        private SectionDBContext db = new SectionDBContext();
         private ApplicationDbContext dba = new ApplicationDbContext();
         
         // GET: Feedbacks/Create
@@ -55,7 +55,15 @@ namespace BookArt.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool isHuman = SetRecaptcha();
+                bool isHuman = false;
+                try
+                {
+                    isHuman = SetRecaptcha();
+                }
+                catch (System.Net.WebException)
+                {
+                    return View("NoInternet");
+                }
 
                 if(isHuman == true)
                 {
@@ -75,22 +83,22 @@ namespace BookArt.Controllers
 
         private bool SetRecaptcha()
         {
-            var response = Request["g-recaptcha-response"];
-            string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp";
-            var client = new WebClient();
-            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
-            var obj = JObject.Parse(result);
+                var response = Request["g-recaptcha-response"];
+                string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp";
+                var client = new WebClient();
+                var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
+                var obj = JObject.Parse(result);
 
-            bool status = (bool)obj.SelectToken("success");
-            ViewBag.RecaptchaMessage = status ? "Ok" : "Упс! Ви робот, спробуйте ще";
-            return status;
+                bool status = (bool)obj.SelectToken("success");
+                ViewBag.RecaptchaMessage = status ? "Ok" : "Упс! Ви робот, спробуйте ще";
+                return status;
         }
 
 
 
         private void SendEmaile(string content)
         {
-            MailAddress from = new MailAddress("k.i.geiko@gmail.com", "Website BookArt...");
+            MailAddress from = new MailAddress("k.i.geiko@gmail.com", "Website BookArt");
             MailAddress to = new MailAddress("k.i.geiko@yandex.ua");
             MailMessage m = new MailMessage(from, to);
             m.Subject = "Надійшло нове повідомленняю";

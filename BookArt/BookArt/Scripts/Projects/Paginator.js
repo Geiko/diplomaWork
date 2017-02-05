@@ -18,7 +18,7 @@
     var pagesQty = resultsAmount / maxOnPage
 
     /* определяем переменную - количество ссылок отображаемых в pagination */
-    var linksQty = 10;
+    var linksQty = 5;
 
     var pagi = $(".pagi");
 

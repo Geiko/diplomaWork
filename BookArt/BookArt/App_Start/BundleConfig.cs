@@ -25,28 +25,32 @@ namespace BookArt
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site1.css",
+                      "~/Content/site3.css",
                       "~/Content/CSS/style_home5.css",
                       "~/Content/CSS/style_about_yourself3.css",
-                      "~/Content/CSS/style_projects4.css",
+                      "~/Content/CSS/style_projects5.css",
                       "~/Content/CSS/style_paginator.css",                      
                       "~/Content/CSS/animate.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3js").Include(
                       "~/Scripts/d3/d3.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/deleteMenu").Include(
+            bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                       "~/Scripts/Home/deleteMenu.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/menuActive").Include(
+                      "~/Scripts/Home/menuActive1.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/feedbackscripts").Include(
-                      "~/Scripts/Feedback/RecaptchaVerification.js",
+                      "~/Scripts/Feedback/RecaptchaVerification1.js",
+                      "~/Scripts/Feedback/GetSendResult.js", 
                       "~/Scripts/Feedback/BackButton.js"));
             
 
             bundles.Add(new ScriptBundle("~/bundles/animate").Include(
                       "~/Scripts/Home/magicAnimation.js",
                       "~/Scripts/Home/animateChar1.js",
-                      "~/Scripts/Home/appearText3.js"));
+                      "~/Scripts/Home/appearText4.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/paginator").Include(
                       "~/Scripts/Projects/paginator.js"));
