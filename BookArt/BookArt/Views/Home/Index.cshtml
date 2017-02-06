@@ -9,9 +9,6 @@
 </div>
 
 <div class="container-fluid wrapper_1">
-    <!-- <div class="fon_bg center-block">
-        <img src="img/fon_slide1.jpg" class="img-responsive tmp1 center-block" alt="fon_slide1">
-    </div> -->
 
     <div class="charK center-block"></div>
 
@@ -49,8 +46,8 @@
                     <!-- <a href="#anchor1"><img src="img/arrow.png" alt="arrow" /></a> -->
                     @*<a id="aArrow" href="#anchor1"></a>*@
 
-                    @Html.ActionLink(" ", "Index", "Project", routeValues: null, htmlAttributes: new { id = "aArrow" })
-                    <div id="aArrow"></div>
+                    @*@Html.ActionLink(" ", "Index", "Project", routeValues: null, htmlAttributes: new { id = "aArrow" })
+                        <div id="aArrow"></div>*@
 
                 </div>
             </div>
@@ -58,9 +55,12 @@
 
 
         <div class="row footer animate1">
-            @*<p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>*@ 
+            @*<p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>*@
         </div>
     </div>
 </div>
+
+
+<div class="container-fluid wrapper_2" style="display: none;"></div>
 
 @Scripts.Render("~/bundles/animate")

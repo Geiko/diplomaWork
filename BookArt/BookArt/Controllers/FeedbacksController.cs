@@ -18,7 +18,7 @@ namespace BookArt.Controllers
     {
         private SectionDBContext db = new SectionDBContext();
         private ApplicationDbContext dba = new ApplicationDbContext();
-        
+
         // GET: Feedbacks/Create
         public ActionResult Create()
         {
@@ -35,63 +35,74 @@ namespace BookArt.Controllers
         private string GetUserMail()
         {
             string currentUserId = User.Identity.IsAuthenticated ? User.Identity.GetUserId() : "anonym";
-            string Email = string.Empty;  
+            string Email = string.Empty;
             if (!currentUserId.Equals("anonym"))
             {
-                 Email = dba.Users.FirstOrDefault(x => x.Id == currentUserId).Email;
+                Email = dba.Users.FirstOrDefault(x => x.Id == currentUserId).Email;
             }
 
             return Email;
         }
+
+
         
-
-
-        // POST: Feedbacks/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UsersEmail,Content,Date")] Feedback feedback)
+        public string Create(FeedbackViewModel feedback)
         {
+            string message = "";
             if (ModelState.IsValid)
             {
                 bool isHuman = false;
                 try
                 {
-                    isHuman = SetRecaptcha();
+                    isHuman = GetCaptchaStatus(feedback.CaptchaResponse);
                 }
                 catch (System.Net.WebException)
                 {
-                    return View("NoInternet");
+                    message = "No Internet";
                 }
 
-                if(isHuman == true)
+                if (isHuman == true)
                 {
-                    feedback.Date = DateTime.Now;
-                    db.Feedbacks.Add(feedback);
+                    Feedback f = new Feedback();
+                    f.Date = DateTime.Now;
+                    f.UsersEmail = feedback.UsersEmail;
+                    f.Content = feedback.Content;
+                    f.Date = DateTime.Now;
+
+                    db.Feedbacks.Add(f);
                     db.SaveChanges();
-                    ViewBag.FeedbackMessage = "Ваше повідомлення надіслано. Дякуємо!";
+                    message = "Ваше повідомлення надіслано. Дякуємо!";
 
                     SendEmaile(feedback.Content);
                 }
+                else
+                {
+                    message = "Упс! Ви робот";
+                }
+            }
+            else
+            {
+                message = "Введено невалідні данні";
             }
 
-            return View(feedback);
+            return message;
         }
 
 
 
-        private bool SetRecaptcha()
+        private bool GetCaptchaStatus(string CaptchaResponse)
         {
-                var response = Request["g-recaptcha-response"];
-                string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp";
-                var client = new WebClient();
-                var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
-                var obj = JObject.Parse(result);
+            //var response = Request["g-recaptcha-response"];
+            var response = CaptchaResponse;
+            string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp";
+            var client = new WebClient();
+            var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
+            var obj = JObject.Parse(result);
 
-                bool status = (bool)obj.SelectToken("success");
-                ViewBag.RecaptchaMessage = status ? "Ok" : "Упс! Ви робот, спробуйте ще";
-                return status;
+            bool status = (bool)obj.SelectToken("success");
+            ViewBag.RecaptchaMessage = status ? "Ok" : "Упс! Ви робот, спробуйте ще";
+            return status;
         }
 
 

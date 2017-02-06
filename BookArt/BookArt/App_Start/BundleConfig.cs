@@ -43,17 +43,18 @@ namespace BookArt
 
             bundles.Add(new ScriptBundle("~/bundles/feedbackscripts").Include(
                       "~/Scripts/Feedback/RecaptchaVerification1.js",
-                      "~/Scripts/Feedback/GetSendResult.js", 
+                      "~/Scripts/Feedback/GetSendResult1.js", 
                       "~/Scripts/Feedback/BackButton.js"));
             
 
             bundles.Add(new ScriptBundle("~/bundles/animate").Include(
                       "~/Scripts/Home/magicAnimation.js",
                       "~/Scripts/Home/animateChar1.js",
-                      "~/Scripts/Home/appearText4.js"));
+                      "~/Scripts/Home/slide.js",
+                      "~/Scripts/Home/appearText5.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/paginator").Include(
-                      "~/Scripts/Projects/paginator.js"));
+                      "~/Scripts/Projects/paginator1.js"));
         }
     }
 }

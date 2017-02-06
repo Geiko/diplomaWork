@@ -185,6 +185,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppDbInitializer.cs" />
+    <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\SectionDBContext.cs" />
@@ -196,7 +197,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\ajax-loader4.gif" />
+    <Content Include="Content\Images\ajax-loader5.gif" />
+    <Content Include="Content\Images\ajax-loader7.gif" />
     <Content Include="Content\Images\Sections\1\Cover.jpg" />
     <Content Include="Content\Images\Sections\2\Cover.jpg" />
     <Content Include="Content\Images\Sections\3\Cover.jpg" />
@@ -239,10 +242,11 @@
     <Content Include="Areas\Admin\Views\ManageFeedbacks\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
-    <Content Include="Scripts\Feedback\GetSendResult.js" />
+    <Content Include="Scripts\Feedback\GetSendResult1.js" />
     <Content Include="Scripts\Feedback\RecaptchaVerification1.js" />
     <Content Include="Scripts\Home\deleteMenu.js" />
     <Content Include="Scripts\Home\menuActive1.js" />
+    <Content Include="Scripts\Home\slide.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -250,11 +254,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Home\appearText4.js" />
+    <Content Include="Scripts\Home\appearText5.js" />
     <Content Include="Scripts\Home\animateChar1.js" />
     <Content Include="Scripts\Home\magicAnimation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Projects\paginator.js" />
+    <Content Include="Scripts\Projects\paginator1.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
