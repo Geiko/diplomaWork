@@ -1,5 +1,6 @@
-﻿
-@model IEnumerable<BookArt.Models.Section>
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<BookArt.Models.Section>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -43,12 +44,19 @@
                         }
 
                         @{
+                            if (counter >= coverQuantity)
+                            {
+                                break;
+                            }
+
                             counter++;
-                            classes = $"hoverAction{counter.ToString()}";
                         }
-                        <div class=@classes>
-                            <img class="shadow" alt="Cover" src="@Model.ElementAt(index).CoverURL" height=@coverHeight />
-                        </div>
+                        <a href="/Project/Works/@Model.ElementAt(index).Id">
+                            <div class="sectionImg">
+                                <img class="shadow" alt="Cover" src="@Model.ElementAt(index).CoverUrl" height=@coverHeight />
+                                <span class="sectionTitle"> @Model.ElementAt(index).Title</span>
+                            </div>
+                        </a>
 
 
                         @if (i == 1)
@@ -61,14 +69,20 @@
                         }
                         @if (i > 0)
                         {
-                        
-                                counter++;
-                                classes = $"hoverAction{counter.ToString()}";
-                           
-                                <div class=@classes>
-                                    <img class="marg shadow" alt="Cover" src="@Model.ElementAt(index).CoverURL" height=@coverHeight />
+                            if (counter >= coverQuantity)
+                            {
+                                break;
+                            }
+
+                            counter++;
+
+                            <a href="/Project/Works/@Model.ElementAt(index).Id">
+                                <div class="sectionImg">
+                                    <img class="marg shadow" alt="Cover" src="@Model.ElementAt(index).CoverUrl" height=@coverHeight />
+                                    <span class="sectionTitle"> @Model.ElementAt(index).Title</span>
                                 </div>
-                                }
+                            </a>
+                        }
                     </div>
                 </div>
 
@@ -88,27 +102,41 @@
                         }
 
                         @{
+                            if (counter >= coverQuantity)
+                            {
+                                break;
+                            }
+
                             counter++;
-                            classes = $"hoverAction{counter.ToString()}";
                         }
-                        <div class=@classes>
-                            <img class="shadow" alt="Cover" src="@Model.ElementAt(index).CoverURL" height=@coverHeight />
-                        </div>
+                        <a href="/Project/Works/@Model.ElementAt(index).Id">
+                            <div class="sectionImg">
+                                <img class="shadow" alt="Cover" src="@Model.ElementAt(index).CoverUrl" height=@coverHeight />
+                                <span class="sectionTitle"> @Model.ElementAt(index).Title</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-                                }
+         }
 
-        <div class="pagination"></div> 
+
+        <div class="pagination1">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+
 
     </div>
 
-    <div class="row footer animate1">
-        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
-    </div>
+
+    @*<div class="pagination1">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>*@
+
+
+
+    @*<div class="row footer animate1">
+            <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+        </div>*@
 
 </div>
-
-
-
-@Scripts.Render("~/bundles/paginator")

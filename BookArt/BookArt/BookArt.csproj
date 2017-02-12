@@ -49,6 +49,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -170,6 +178,12 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageFeedbacksController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManagePagesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageSectionsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageWorksController.cs" />
+    <Compile Include="Areas\Admin\Models\PageViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\SectionViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\WorkViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -178,9 +192,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702031435255_Seed1.cs" />
-    <Compile Include="Migrations\201702031435255_Seed1.Designer.cs">
-      <DependentUpon>201702031435255_Seed1.cs</DependentUpon>
+    <Compile Include="Migrations\201702071203190_Seed1.cs" />
+    <Compile Include="Migrations\201702071203190_Seed1.Designer.cs">
+      <DependentUpon>201702071203190_Seed1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702081004199_Rating.cs" />
+    <Compile Include="Migrations\201702081004199_Rating.Designer.cs">
+      <DependentUpon>201702081004199_Rating.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -197,35 +215,57 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Images\ajax-loader4.gif" />
-    <Content Include="Content\Images\ajax-loader5.gif" />
-    <Content Include="Content\Images\ajax-loader7.gif" />
-    <Content Include="Content\Images\Sections\1\Cover.jpg" />
-    <Content Include="Content\Images\Sections\2\Cover.jpg" />
-    <Content Include="Content\Images\Sections\3\Cover.jpg" />
-    <Content Include="Content\Images\Sections\4\Cover.jpg" />
-    <Content Include="Content\Images\Sections\5\Cover.jpg" />
-    <Content Include="Content\Images\Sections\6\Cover.jpg" />
-    <Content Include="Content\Images\Sections\7\Cover.jpg" />
-    <Content Include="Content\Images\Sections\8\Cover.jpg" />
+    <Content Include="Content\CSS\style.css" />
+    <Content Include="Content\CSS\turn.css" />
+    <Content Include="Content\Images\Misc\ajax-loader4.gif" />
+    <Content Include="Content\Images\Misc\ajax-loader5.gif" />
+    <Content Include="Content\Images\Misc\ajax-loader7.gif" />
+    <Content Include="Content\Images\Sections\SectionCover_1.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_2.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_3.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_4.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_5.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_6.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_7.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_8.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CSS\animate.min.css" />
     <Content Include="Content\CSS\style_home5.css" />
     <Content Include="Content\CSS\style_about_yourself3.css" />
     <Content Include="Content\CSS\style_paginator.css" />
-    <Content Include="Content\CSS\style_projects5.css" />
+    <Content Include="Content\CSS\style_projects4.css" />
     <Content Include="Content\CSS\style_write.css" />
-    <Content Include="Content\Images\arrow.png" />
-    <Content Include="Content\Images\fon_slide1.jpg" />
-    <Content Include="Content\Images\fon_slide2.jpg" />
-    <Content Include="Content\Images\KostPhoto.JPG" />
-    <Content Include="Content\Images\logo_mini.jpg" />
-    <Content Include="Content\Images\Works\1\Cover.jpg" />
+    <Content Include="Content\Images\Misc\arrow.png" />
+    <Content Include="Content\Images\Misc\fon_slide1.jpg" />
+    <Content Include="Content\Images\Misc\fon_slide2.jpg" />
+    <Content Include="Content\Images\Misc\KostPhoto.JPG" />
+    <Content Include="Content\Images\Misc\logo_mini.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_1.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_10.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_11.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_12.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_13.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_14.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_15.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_16.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_17.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_2.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_3.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_4.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_5.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_6.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_7.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_8.jpg" />
+    <Content Include="Content\Images\Works\WorkCover_9.jpg" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site3.css" />
+    <Content Include="Content\Site7.css" />
+    <Content Include="Scripts\Admin\AddUrl.js" />
+    <Content Include="Scripts\Admin\CreateNewObj.js" />
+    <Content Include="Scripts\Admin\SubmitOnSelect1.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -240,10 +280,24 @@
     <Content Include="Areas\Admin\Views\ManageFeedbacks\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ManageFeedbacks\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ManageFeedbacks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageSections\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageSections\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageSections\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageSections\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageSections\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageWorks\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageWorks\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageWorks\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageWorks\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageWorks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
     <Content Include="Scripts\Feedback\GetSendResult1.js" />
-    <Content Include="Scripts\Feedback\RecaptchaVerification1.js" />
     <Content Include="Scripts\Home\deleteMenu.js" />
     <Content Include="Scripts\Home\menuActive1.js" />
     <Content Include="Scripts\Home\slide.js" />
@@ -261,8 +315,27 @@
     <Content Include="Scripts\Projects\paginator1.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\turnjs4\changelog.txt" />
+    <Content Include="Scripts\turnjs4\extras\jGestures-license.txt" />
+    <Content Include="Scripts\turnjs4\extras\jgestures.min.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery-ui-1.8.20.custom.min.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery.min.1.7.js" />
+    <Content Include="Scripts\turnjs4\extras\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\turnjs4\extras\modernizr.2.5.3.min.js" />
+    <Content Include="Scripts\turnjs4\lib\hash.js" />
+    <Content Include="Scripts\turnjs4\lib\scissor.js" />
+    <Content Include="Scripts\turnjs4\lib\scissor.min.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.html4.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.html4.min.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.js" />
+    <Content Include="Scripts\turnjs4\lib\turn.min.js" />
+    <Content Include="Scripts\turnjs4\lib\zoom.js" />
+    <Content Include="Scripts\turnjs4\lib\zoom.min.js" />
+    <Content Include="Scripts\turnjs4\myTurnTune.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -298,12 +371,14 @@
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Feedbacks\Create.cshtml" />
     <Content Include="Views\Shared\NoInternet.cshtml" />
+    <Content Include="Views\Project\Works.cshtml" />
+    <Content Include="Views\Project\Pages.cshtml" />
+    <Content Include="Scripts\turnjs4\lib\compress.sh" />
+    <Content Include="Views\Project\Books.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Content\Images\Pages\" />
-    <Folder Include="Content\Images\Works\2\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -314,8 +389,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702031435255_Seed1.resx">
-      <DependentUpon>201702031435255_Seed1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702071203190_Seed1.resx">
+      <DependentUpon>201702071203190_Seed1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702081004199_Rating.resx">
+      <DependentUpon>201702081004199_Rating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

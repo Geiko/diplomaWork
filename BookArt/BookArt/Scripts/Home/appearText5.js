@@ -28,7 +28,7 @@
     //};
 
     function addArrow() {
-        $('.dart').html('<img src="/Content/Images/arrow.png" alt="arrow" height=30 />');
+        $('.dart').html('<img src="/Content/Images/Misc/arrow.png" alt="arrow" height=30 />');
     };
 
     function addYear() {

@@ -9,6 +9,7 @@
     @Scripts.Render("~/bundles/d3js")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/adminSection")
 
 </head>
 <body>
@@ -17,7 +18,7 @@
 
             <div class="navbar-header menuDelete">
                 <a href='@Url.Action("Index", "Home")'>
-                    <img class="logo1" src="/Content/Images/logo_mini.jpg" alt="logo_mini" width="300" height="100" />
+                    <img class="logo1" src="~/Content/Images/Misc/logo_mini.jpg" alt="logo_mini" width="220" />
                 </a>
             </div>
 
@@ -30,7 +31,7 @@
                     <li>@Html.ActionLink("Проекти", "Index", "Project", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Про себе", "About", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Написати", "Create", "Feedbacks", new { area = "" }, null)</li>
-</ul>
+                </ul>
 
                 @Html.Partial("_LoginPartial")
             </div>
@@ -47,6 +48,15 @@
                     @Html.ActionLink("Адміністративна панель", "Index", "Dashboard")
                 </div>
                 <div>
+                    @Html.ActionLink("- Розділи", "Index", "ManageSections")
+                </div>
+                <div>
+                    @Html.ActionLink("- Роботи", "Index", "ManageWorks")
+                </div>
+                <div>
+                    @Html.ActionLink("- Сторінки", "Index", "ManagePages")
+                </div>
+                <div>
                     @Html.ActionLink("Зворотній зв'язок", "Index", "ManageFeedbacks")
                 </div>
             </div>
@@ -60,7 +70,7 @@
     <p class="footer menuDelete">
         &copy; @DateTime.Now.Year - Дніпро, Україна
     </p>
-     
+
     @RenderSection("scripts", required: false)
 </body>
 

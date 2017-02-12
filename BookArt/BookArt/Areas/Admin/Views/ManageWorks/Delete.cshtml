@@ -1,0 +1,86 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.WorkViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="topPad">Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Work</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.SectionId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.SectionId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SectionTitle)
+        </dd>
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.Number)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.Name)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.CoverUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.CoverUrl)
+        </dd>
+
+    </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10 imgAdm">
+            <img alt="Section Cover" src="@Model.Work.CoverUrl" height="110" />
+        </div>
+    </div>
+
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                Works
+            </dt>
+            <dd>
+                @Html.DropDownList(
+                "works",
+                Model.Pages as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+            </dd>
+        </dl>
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

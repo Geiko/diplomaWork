@@ -11,7 +11,6 @@ $(document).ready(function () {
             });
 
             $('.wrapper_2').slideDown(100, function () { });
-            //document.body.style.overflow = "scroll";
         })
     })();
 });

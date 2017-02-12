@@ -13,6 +13,6 @@ namespace BookArt.Models
 
 
         public int Number { get; set; }
-        public string CoverUrl { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace BookArt.Models
         /// </summary>
         [DisplayName("Ваша єлектронна поштова скринька")]
         [Required(ErrorMessage = "Будь ласка, обов'язково заповніть це поле")]
-    [EmailAddress(ErrorMessage = "Єлектронна поштова адреса введена не вірно")]
+        //[EmailAddress(ErrorMessage = "Єлектронна поштова адреса введена не вірно")]
         [StringLength(80)]
         public string UsersEmail { get; set; }    
 

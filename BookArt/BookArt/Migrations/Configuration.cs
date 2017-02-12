@@ -33,31 +33,79 @@ namespace BookArt.Migrations
             var works = new List<Work>();
             works.Add(new Work
             {
+                SectionId = 1,
+                Number = 1,
                 Name = "Nikolaev Medalon",
-                CoverUrl = "/Content/Images/Work/1/Cover.jpg",
-                SectionId = 1
+                CoverUrl = "/Content/Images/Works/1/WorkCover_1.jpg"
             });
+
+
 
             var sections = new List<Section>();
             sections.Add(new Section
             {
-                Title = "blab",
-                CoverURL = "/Content/Images/Sections/1/Cover.jpg",
+                Number = 1,
+                Title = "Книга",
+                CoverUrl = "/Content/Images/Sections/SectionCover_1.jpg",
                 Works = works
             });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/2/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/3/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/4/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/5/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/6/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/7/Cover.jpg" });
-            sections.Add(new Section { Title = "blab", CoverURL = "/Content/Images/Sections/8/Cover.jpg" });
+            sections.Add(new Section
+            {
+                Number = 2,
+                Title = "Айдентика",
+                CoverUrl = "/Content/Images/Sections/SectionCover_2.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 3,
+                Title = "Геральдика",
+                CoverUrl = "/Content/Images/Sections/SectionCover_3.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 4,
+                Title = "Композиції",
+                CoverUrl = "/Content/Images/Sections/SectionCover_4.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 5,
+                Title = "Книга в шкірі",
+                CoverUrl = "/Content/Images/Sections/SectionCover_5.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 6,
+                Title = "Інтер'єр",
+                CoverUrl = "/Content/Images/Sections/SectionCover_6.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 7,
+                Title = "Дизайн",
+                CoverUrl = "/Content/Images/Sections/SectionCover_7.jpg"
+            });
+            sections.Add(new Section
+            {
+                Number = 8,
+                Title = "Каліграфія",
+                CoverUrl = "/Content/Images/Sections/SectionCover_8.jpg"
+            });
+
             sections.ForEach(s => context.Sections.Add(s));
 
 
             var feedbacks = new List<Feedback>();
-            feedbacks.Add(new Feedback { UsersEmail = "testEmail", Content = "testContent", Date = DateTime.Now });
+            feedbacks.Add(new Feedback
+            {
+                UsersEmail = "testEmail",
+                Content = "testContent",
+                Date = DateTime.Now
+            });
+
             feedbacks.ForEach(s => context.Feedbacks.Add(s));
+
+
 
             context.SaveChanges();
         }

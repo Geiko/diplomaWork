@@ -12,6 +12,7 @@ namespace BookArt.Models
         public int SectionId { get; set; }
 
 
+        public int Number { get; set; }
         public string Name { get; set; }
         public string CoverUrl { get; set; }
 

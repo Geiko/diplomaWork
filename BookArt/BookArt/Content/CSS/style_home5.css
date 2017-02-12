@@ -14,7 +14,7 @@
 
 .wrapper_1{
 	height: 100%;
-	background: #000000 url('../../Content/Images/fon_slide1.jpg') no-repeat center center;
+	background: #000000 url('../../Content/Images/Misc/fon_slide1.jpg') no-repeat center center;
 	background-size: auto 100%;
 	/*border: 1px solid yellow;*/
 	position: relative;
@@ -22,7 +22,7 @@
 
 .wrapper_2{
 	height: 100%;
-	background: #020202 url('../../Content/Images/fon_slide2.jpg') no-repeat center center;
+	background: #020202 url('../../Content/Images/Misc/fon_slide2.jpg') no-repeat center center;
 	background-size: auto 100%;
 	/*border: 1px solid yellow;*/
 }

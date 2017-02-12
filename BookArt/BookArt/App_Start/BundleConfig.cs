@@ -25,15 +25,21 @@ namespace BookArt
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site3.css",
+                      "~/Content/site7.css",
                       "~/Content/CSS/style_home5.css",
                       "~/Content/CSS/style_about_yourself3.css",
-                      "~/Content/CSS/style_projects5.css",
+                      "~/Content/CSS/style_projects4.css",
                       "~/Content/CSS/style_paginator.css",                      
-                      "~/Content/CSS/animate.min.css"));
+                      "~/Content/CSS/animate.min.css",
+                      "~/Content/CSS/turn.css",
+                      "~/Content/CSS/style.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3js").Include(
                       "~/Scripts/d3/d3.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/turnjs").Include(
+                      "~/Scripts/turnjs4/lib/turn.js",
+                      "~/Scripts/turnjs4/myTurnTune.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                       "~/Scripts/Home/deleteMenu.js"));
@@ -42,7 +48,6 @@ namespace BookArt
                       "~/Scripts/Home/menuActive1.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/feedbackscripts").Include(
-                      "~/Scripts/Feedback/RecaptchaVerification1.js",
                       "~/Scripts/Feedback/GetSendResult1.js", 
                       "~/Scripts/Feedback/BackButton.js"));
             
@@ -55,6 +60,11 @@ namespace BookArt
 
             bundles.Add(new ScriptBundle("~/bundles/paginator").Include(
                       "~/Scripts/Projects/paginator1.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/adminSection").Include(
+                      "~/Scripts/Admin/AddUrl.js",
+                      "~/Scripts/Admin/CreateNewObj.js",
+                      "~/Scripts/Admin/SubmitOnSelect1.js"));
         }
     }
 }

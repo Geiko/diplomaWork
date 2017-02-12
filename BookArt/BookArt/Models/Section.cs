@@ -9,13 +9,13 @@ namespace BookArt.Models
     {
         public int Id { get; set; }
 
-
+        public int Number { get; set; }
         public string Title { get; set; }
-        public string CoverURL { get; set; }    
+        public string CoverUrl { get; set; }    
         
-
+        
         public virtual ICollection<Work> Works { get; set; }
-        
+
         public Section()
         {
             Works = new List<Work>();

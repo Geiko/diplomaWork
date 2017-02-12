@@ -31,12 +31,14 @@ $(document).ready(function () {
                             string_a.localeCompare(string_b);
                         }
                         sendFeedback.addClass("disabled");
+                        //$('#UsersEmail').val('');
+                        $('#Content').val('');
                     },
                     error: function (message) {
                         responsePlace.html('<span>Error: ' + message + '</span>');
                     },
                     beforeSend: function () {
-                        responsePlace.html('<img src="/Content/Images/ajax-loader5.gif" alt="Wait" />');
+                        responsePlace.html('<img src="/Content/Images/Misc/ajax-loader5.gif" alt="Wait" />');
                     }
                 });
             }
