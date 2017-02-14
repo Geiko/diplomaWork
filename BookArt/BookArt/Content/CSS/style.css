@@ -1,4 +1,20 @@
 ﻿
-.navbar-nav  a, .navbar-header a {
-   color:  #caabab;      
+.navbar-nav a, .navbar-header a {
+    color: #caabab;
+}
+
+    .navbar-nav a:hover {
+        color: #8B2927 !important;
+    }
+
+.Enlarged {
+    height: 400px;
+    z-index: 2;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }

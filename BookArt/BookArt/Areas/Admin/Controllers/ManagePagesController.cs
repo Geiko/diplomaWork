@@ -30,19 +30,14 @@ namespace BookArt.Areas.Admin.Controllers
             {
                 if (sectionFlag.Equals("no"))
                 {
-                    int workId = db.Works
-                                        .Where(w =>
-                                        w.Name.Equals(workName))
+                    int workId = db.Works.Where(w => w.Name.Equals(workName))
                                         .FirstOrDefault().Id;
                     pages = db.Pages.Where(w => w.WorkId == workId).ToList();
                 }
             }
-            //else
-            //{
-            //    pages = db.Pages.OrderBy(p => p.WorkId).ThenBy(p => p.Number).ToList();
-            //}
 
             List<string> sectionTitleList = db.Sections.OrderBy(t => t.Number).Select(s => s.Title).ToList();
+            sectionTitleList.Insert(0, "");
 
             List<string> workNameList = new List<string>();
             if (!string.IsNullOrEmpty(sectionTitle))
@@ -50,10 +45,6 @@ namespace BookArt.Areas.Admin.Controllers
                 int secId = db.Sections.Where(w => w.Title.Equals(sectionTitle)).FirstOrDefault().Id;
                 workNameList = db.Works.Where(w => w.SectionId == secId)
                                         .Select(w => w.Name).OrderBy(n => n).ToList();
-            }
-            else
-            {
-                workNameList = db.Works.Select(w => w.Name).OrderBy(n => n).ToList();
             }
 
             PageViewModel pageViewModel = new PageViewModel

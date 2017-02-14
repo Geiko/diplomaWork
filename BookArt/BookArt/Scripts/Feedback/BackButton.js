@@ -1,6 +1,8 @@
 ﻿'use strict';
 $(document).ready(function () {
-    $('#feedback-return').click(function () {
-        window.history.back();
+    $('.feedback-return-btn').click(function () {
+
+       // window.history.back();
+        window.history.go(-1)
     });
 });

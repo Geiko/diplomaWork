@@ -19,7 +19,7 @@
 
             <div class="navbar-header menuDelete">
                 <a href='@Url.Action("Index", "Home")'>
-                    <img class="logo1" src="/Content/Images/Misc/logo_mini.jpg" alt="logo_mini" width="300" height="100" />  
+                    <img class="logo1" src="/Content/Images/Misc/logo_mini.jpg" alt="logo_mini" width="300" height="100" />
                 </a>
             </div>
 
@@ -42,7 +42,9 @@
 
     @RenderBody()
 
-    @*<p class="footer menuDelete"> &copy; @DateTime.Now.Year - Дніпро, Україна</p>*@
+    <p class="footer footerToDelete">
+        @*&copy; @DateTime.Now.Year - Дніпро, Україна*@
+    </p>
 
     @RenderSection("scripts", required: false)
 </body>

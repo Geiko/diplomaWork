@@ -1,8 +1,9 @@
 'use strict';
-//$(document).ready(function () {
+$(document).ready(function () {
 
     var footAnimate = function () {
+
         $('.animate1').addClass('animated shake');
     };
 
-//});
+});

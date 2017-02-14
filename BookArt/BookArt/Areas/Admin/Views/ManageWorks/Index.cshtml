@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="topPad">Index Works</h2>
+<h2 class="topPad">Перелік робот</h2>
 
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "filterForm" }))
@@ -13,7 +13,7 @@
     <div>
         <dl class="dl-horizontal">
             <dt>
-                Select a Section:
+                Оберіть розділ:
             </dt>
             <dd>
                 <div class="col-md-4">
@@ -22,9 +22,6 @@
                          Model.Sections as SelectList,
                          htmlAttributes: new { @class = "form-control" })
                 </div>
-                @*<div class="col-md-8">
-                    <input id="applySection" type="submit" value="Apply Filter" class="btn btn-primary" />
-                </div>*@
             </dd>
         </dl>
     </div>
@@ -35,12 +32,8 @@
     <input name="secTitle" id="secTitle" type="hidden" value="">
 }
 
-<input id="createNewWork" type="button" value="Create New Work" class="btn btn-primary" />
+<input id="createNewWork" type="button" value="Створити нову роботу" class="btn btn-primary" />
 
-
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
 
 <table class="table">
     <tr>
@@ -56,9 +49,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Work.Name)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Work.CoverUrl)
-        </th>
+        </th>*@
         <th>Image</th>
         <th></th>
     </tr>
@@ -78,16 +71,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.CoverUrl)
+            </td>*@
+            <td>
+                <img alt="Work Cover" src="@item.CoverUrl" height="30" />
             </td>
             <td>
-                <img alt="Work Cover" src="@item.CoverUrl" height="50" />
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Деталі", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Знищити", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

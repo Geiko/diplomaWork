@@ -177,10 +177,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManageAboutController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageFeedbacksController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManagePagesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageSectionsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageWorksController.cs" />
+    <Compile Include="Areas\Admin\Models\AboutViewModel.cs" />
     <Compile Include="Areas\Admin\Models\PageViewModel.cs" />
     <Compile Include="Areas\Admin\Models\SectionViewModel.cs" />
     <Compile Include="Areas\Admin\Models\WorkViewModel.cs" />
@@ -188,7 +190,9 @@
     <Compile Include="Controllers\FeedbacksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\WorksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,6 +203,18 @@
     <Compile Include="Migrations\201702081004199_Rating.cs" />
     <Compile Include="Migrations\201702081004199_Rating.Designer.cs">
       <DependentUpon>201702081004199_Rating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702130740171_Rating1.cs" />
+    <Compile Include="Migrations\201702130740171_Rating1.Designer.cs">
+      <DependentUpon>201702130740171_Rating1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702130801348_Rating2.cs" />
+    <Compile Include="Migrations\201702130801348_Rating2.Designer.cs">
+      <DependentUpon>201702130801348_Rating2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702131049140_Rating3.cs" />
+    <Compile Include="Migrations\201702131049140_Rating3.Designer.cs">
+      <DependentUpon>201702131049140_Rating3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -216,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\CSS\style.css" />
+    <Content Include="Content\CSS\style_admin.css" />
     <Content Include="Content\CSS\turn.css" />
     <Content Include="Content\Images\Misc\ajax-loader4.gif" />
     <Content Include="Content\Images\Misc\ajax-loader5.gif" />
@@ -259,12 +276,14 @@
     <Content Include="Content\Images\Works\WorkCover_8.jpg" />
     <Content Include="Content\Images\Works\WorkCover_9.jpg" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="App_Data\About.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site7.css" />
     <Content Include="Scripts\Admin\AddUrl.js" />
     <Content Include="Scripts\Admin\CreateNewObj.js" />
+    <Content Include="Scripts\Admin\menuActiveAdmin.js" />
     <Content Include="Scripts\Admin\SubmitOnSelect1.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -290,11 +309,12 @@
     <Content Include="Areas\Admin\Views\ManageWorks\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ManageWorks\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ManageWorks\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\ManagePages\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ManagePages\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ManagePages\Details.cshtml" />
     <Content Include="Areas\Admin\Views\ManagePages\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ManagePages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ManageAbout\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LoginPartialAdmin.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
     <Content Include="Scripts\Feedback\GetSendResult1.js" />
@@ -312,7 +332,7 @@
     <Content Include="Scripts\Home\animateChar1.js" />
     <Content Include="Scripts\Home\magicAnimation.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Projects\paginator1.js" />
+    <Content Include="Scripts\Projects\pageEnlarge.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\turnjs4\changelog.txt" />
@@ -371,13 +391,12 @@
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Feedbacks\Create.cshtml" />
     <Content Include="Views\Shared\NoInternet.cshtml" />
-    <Content Include="Views\Project\Works.cshtml" />
-    <Content Include="Views\Project\Pages.cshtml" />
     <Content Include="Scripts\turnjs4\lib\compress.sh" />
-    <Content Include="Views\Project\Books.cshtml" />
+    <Content Include="Views\Works\Index.cshtml" />
+    <Content Include="Views\Pages\Index.cshtml" />
+    <Content Include="Views\Pages\Books.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\Images\Pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -394,6 +413,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702081004199_Rating.resx">
       <DependentUpon>201702081004199_Rating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702130740171_Rating1.resx">
+      <DependentUpon>201702130740171_Rating1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702130801348_Rating2.resx">
+      <DependentUpon>201702130801348_Rating2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702131049140_Rating3.resx">
+      <DependentUpon>201702131049140_Rating3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,29 +5,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="topPad">Index Page</h2>
+<h2 class="topPad">Перелік сторінок</h2>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "filterForm" }))
 {
+
     <div class="col-md-2 text-right">
-        Select a Work:
+        Оберіть розділ:
+    </div>
+
+    <div class="col-md-2">
+        @Html.DropDownList(
+            "sectionTitle",
+            Model.Sections as SelectList,
+            htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-2 text-right">
+        Оберіть роботу:
     </div>
 
     <div class="col-md-6">
         @Html.DropDownList(
             "workName",
             Model.Works as SelectList,
-            htmlAttributes: new { @class = "form-control" })
-    </div>
-
-    <div class="col-md-1 text-right">
-        Sections:
-    </div>
-
-    <div class="col-md-3">
-        @Html.DropDownList(
-            "sectionTitle",
-            Model.Sections as SelectList,
             htmlAttributes: new { @class = "form-control" })
     </div>
 
@@ -40,7 +41,7 @@
     <input name="worName" id="worName" type="hidden" value="">
 }
 
-<input id="createNewPage" type="button" value="Create New Page" class="btn btn-sm btn-primary" />
+<input id="createNewPage" type="button" value="Створити нову сторінку" class="btn btn-sm btn-primary" />
 
 <table class="table">
     <tr>
@@ -79,9 +80,9 @@
                 <img alt="Page Cover" src="@item.ImgUrl" height="30" />
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Деталі", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Знищити", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

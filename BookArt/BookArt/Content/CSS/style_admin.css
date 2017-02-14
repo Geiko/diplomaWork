@@ -1,0 +1,9 @@
+﻿.dashboard {
+    font-size: 18px;
+    line-height: 200%;
+}
+
+.activeBorderAdmin{
+    background-color: rgba(192, 252, 250, 0.51);
+}
+

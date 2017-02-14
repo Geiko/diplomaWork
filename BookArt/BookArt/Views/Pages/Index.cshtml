@@ -1,4 +1,6 @@
-﻿@model IEnumerable<BookArt.Models.Page>
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<BookArt.Models.Page>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Pages";
@@ -10,15 +12,8 @@
 
         @{
             int coverQuantity = Model.Count();
-            int bookOnPage = 8;
-            int pageQuantity = coverQuantity % bookOnPage;
-            int counter = 0;
-
-            int pageNumber = 1;
-            string classes = "";
-
-
             int coverHeight = 160;
+            int counter = 0;
             int index = 0;
         }
 
@@ -41,20 +36,17 @@
                         }
 
                         @{
-                            if (counter >= coverQuantity)
+                            if (counter < coverQuantity)
                             {
-                                break;
+                                <div  id="d1" class="sectionImg">
+                                    <img id="a1" class="shadow" alt="Cover"
+                                         src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
+                                    <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
+                                </div>
                             }
 
                             counter++;
                         }
-                        <a href="/Project/Pages/@Model.ElementAt(index).Id">
-                            <div class="sectionImg">
-                                <img class="shadow" alt="Cover"
-                                     src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
-                                <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
-                            </div>
-                        </a>
 
 
                         @if (i == 1)
@@ -67,19 +59,16 @@
                         }
                         @if (i > 0)
                         {
-                            if (counter >= coverQuantity)
+                            if (counter < coverQuantity)
                             {
-                                break;
-                            }
-                            counter++;
-
-                            <a href="/Project/Pages/@Model.ElementAt(index).Id">
                                 <div class="sectionImg">
                                     <img class="marg shadow" alt="Cover"
                                          src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
                                     <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
                                 </div>
-                            </a>
+                            }
+
+                            counter++;
                         }
                     </div>
                 </div>
@@ -100,26 +89,36 @@
                         }
 
                         @{
-                            if (counter >= coverQuantity)
+                            if (counter < coverQuantity)
                             {
-                                break;
+                                <div class="sectionImg">
+                                    <img class="shadow" alt="Cover"
+                                         src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
+                                    <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
+                                </div>
                             }
+
                             counter++;
                         }
-                        <a href="/Project/Pages/@Model.ElementAt(index).Id">
-                            <div class="sectionImg">
-                                <img class="shadow" alt="Cover"
-                                     src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
-                                <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
                             }
+
+        <div class="sendButton backFromProject">
+            <a href="javascript:history.go(-1)" class="btnPro">Повернутися на попередню сторінку</a>
+        </div>
+
     </div>
 
-    @*<div class="row footer animate1">
-            <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
-        </div>*@
+    <div class="row footer animate1">
+        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+    </div>
+
 </div>
+
+<div class="pagination1">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>
+
+@Scripts.Render("~/bundles/pageEnlarge")

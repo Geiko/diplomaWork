@@ -29,6 +29,7 @@ namespace BookArt.Models
         /// <summary>
         /// Gets or sets date of feedback.
         /// </summary>
+        [DisplayName("Дата")]
         public DateTime Date { get; set; }
     }
 }

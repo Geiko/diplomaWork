@@ -137,8 +137,11 @@ D:\My\IT\STEP\25. DIPLOM\BookArt\BookArt\obj\Debug\BookArt.pdb
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Seed1.resources
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csproj.GenerateResource.Cache
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating.resources
-D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csprojResolveAssemblyReference.cache
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\PagedList.dll
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\PagedList.Mvc.dll
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\PagedList.xml
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\PagedList.Mvc.xml
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating1.resources
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.csprojResolveAssemblyReference.cache
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating2.resources
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Debug\BookArt.Migrations.Rating3.resources

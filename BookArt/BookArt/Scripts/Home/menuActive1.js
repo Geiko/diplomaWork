@@ -14,7 +14,9 @@ $(document).ready(function () {
         //console.log(pageUrlPartial);
         //console.log(linkUrlPartial);
         
-        if (linkUrlPartial == pageUrlPartial) {
+        if (linkUrlPartial == pageUrlPartial ||
+            pageUrlPartial == 'Pages' && linkUrlPartial == 'Project' ||
+            pageUrlPartial == 'Works' && linkUrlPartial == 'Project') {
 
             $(this).addClass("activeBorder");
         }

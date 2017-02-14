@@ -32,6 +32,7 @@ namespace BookArt
                       "~/Content/CSS/style_paginator.css",                      
                       "~/Content/CSS/animate.min.css",
                       "~/Content/CSS/turn.css",
+                      "~/Content/CSS/style_admin.css",
                       "~/Content/CSS/style.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3js").Include(
@@ -58,13 +59,18 @@ namespace BookArt
                       "~/Scripts/Home/slide.js",
                       "~/Scripts/Home/appearText5.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/paginator").Include(
-                      "~/Scripts/Projects/paginator1.js"));
+            bundles.Add(new ScriptBundle("~/bundles/pageEnlarge").Include(
+                      "~/Scripts/Projects/pageEnlarge.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/adminSection").Include(
                       "~/Scripts/Admin/AddUrl.js",
                       "~/Scripts/Admin/CreateNewObj.js",
-                      "~/Scripts/Admin/SubmitOnSelect1.js"));
+                      "~/Scripts/Admin/SubmitOnSelect1.js",
+                      "~/Scripts/Admin/SubmitOnSelect1.js",
+                      "~/Scripts/Admin/menuActiveAdmin.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/backButton").Include(
+                      "~/Scripts/Feedback/BackButton.js"));
         }
     }
 }

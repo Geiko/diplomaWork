@@ -24,7 +24,7 @@ namespace BookArt.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.AboutContent = System.IO.File.ReadAllText(Server.MapPath(@"~/App_Data/About.txt"));
 
             return View();
         }

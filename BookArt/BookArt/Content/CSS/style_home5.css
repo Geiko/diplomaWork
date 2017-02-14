@@ -121,7 +121,8 @@ svg{
 }
 
 .footer{
-    color: #A19B98;
+    /*color: #A19B98;*/
+    color: #caabab;
     position: absolute;
     left: 0;
     bottom: 0; 

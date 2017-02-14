@@ -5,7 +5,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2 class="topPad">Section Details</h2>
+<h2 class="topPad">Деталі розділу</h2>
 
 <div>
     <hr />
@@ -54,7 +54,7 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
-            Works
+            Роботи
         </dt>
         <dd>
             @Html.DropDownList(
@@ -67,6 +67,6 @@
 
 
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Section.Id }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Редагувати", "Edit", new { id = Model.Section.Id }) |
+        @Html.ActionLink("Повернутися до переліку", "Index")
     </p>

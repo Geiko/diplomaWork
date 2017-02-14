@@ -5,10 +5,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2 class="topPad">Details</h2>
+<h2 class="topPad">Деталі роботи</h2>
 
 <div>
-    <h4>Work</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -66,7 +65,7 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
-            Works
+            Сторінки
         </dt>
         <dd>
             @Html.DropDownList(
@@ -79,6 +78,6 @@
 
 
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Work.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Work.Id }) |
+    @Html.ActionLink("Повернутися до переліку", "Index")
 </p>

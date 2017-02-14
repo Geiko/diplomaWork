@@ -5,7 +5,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2 class="topPad">Edit Page</h2>
+<h2 class="topPad">Редагувати сторінку</h2>
 
 @using (Html.BeginForm(null, null, new { @id = string.Empty }, FormMethod.Post, new { @id = "workForm" }))
 {
@@ -59,7 +59,7 @@
                 @Html.ValidationMessageFor(model => model.Page.ImgUrl, "", new { @class = "text-danger" })
             </div>
             <div class="col-md-1">
-                <input id="addUrl" type="button" value="Add Url" class="btn btn-primary" />
+                <input id="addUrl" type="button" value="Додати URL" class="btn btn-primary" />
             </div>
         </div>
     </div>
@@ -68,8 +68,7 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <div class="control-label col-md-2">
-            Image
+        <div class="control-label col-md-2">            Малюнок
         </div>
         <div class="col-md-3">
             <img alt="Work Cover" src="@Model.Page.ImgUrl" height="110" />
@@ -80,15 +79,15 @@
             {
                 <input name="id" id="id" type="hidden" value="@Model.Page.Id">
                 <input name="fileToUpload" id="fileToUpload" type="file" class="btn btn-xs btn-primary"><br />
-                <input name="submit" id="uploadSubmit" type="submit" value="Save Image" class="btn btn-xs btn-primary">
+                <input name="submit" id="uploadSubmit" type="submit" value="Зберегти малюнок" class="btn btn-xs btn-primary">
             }
 
-            @using (Html.BeginForm("DeleteCover", "ManagePages", FormMethod.Post))
+            @*@using (Html.BeginForm("DeleteCover", "ManagePages", FormMethod.Post))
             {
                 <input name="id" id="id" type="hidden" value="@Model.Page.Id"><br />
                 <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
                        class="btn btn-xs btn-primary">
-            }
+            }*@
         </div>
     </div>
 </div>
@@ -98,10 +97,10 @@
 
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <input type="submit"  form="workForm"  value="Save" class="btn btn-success" />
+        <input type="submit"  form="workForm"  value="Зберегти" class="btn btn-success" />
     </div>
 </div>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Повернутися до переліку", "Index")
 </div>
