@@ -22,7 +22,7 @@ namespace BookArt.Areas.Admin.Controllers
         // GET: Admin/ManageSections
         public ActionResult Index()
         {
-            return View(db.Sections.ToList());
+            return View(db.Sections.OrderBy(s => s.Number).ToList());
         }
 
         // GET: Admin/ManageSections/Details/5

@@ -32,7 +32,7 @@ namespace BookArt.Areas.Admin.Controllers
                 {
                     int workId = db.Works.Where(w => w.Name.Equals(workName))
                                         .FirstOrDefault().Id;
-                    pages = db.Pages.Where(w => w.WorkId == workId).ToList();
+                    pages = db.Pages.Where(p => p.WorkId == workId).OrderBy(p => p.Number).ToList();
                 }
             }
 
@@ -117,7 +117,7 @@ namespace BookArt.Areas.Admin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,WorkId,Number,ImgUrl")] Page page)
+        public ActionResult Create(Page page)
         {
             if (ModelState.IsValid)
             {

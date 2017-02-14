@@ -45,18 +45,18 @@
 
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Page.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Page.WorkId)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Page.Number)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Page.ImgUrl)
-        </th>
+        </th>*@
         <th>Image</th>
         <th></th>
     </tr>
@@ -64,18 +64,18 @@
     @foreach (var item in Model.Pages)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WorkId)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Number)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ImgUrl)
-            </td>
+            </td>*@
             <td>
                 <img alt="Page Cover" src="@item.ImgUrl" height="30" />
             </td>

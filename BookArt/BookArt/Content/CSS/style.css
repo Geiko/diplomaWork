@@ -3,9 +3,9 @@
     color: #caabab;
 }
 
-    .navbar-nav a:hover {
-        color: #8B2927 !important;
-    }
+.navbar-nav a:hover {
+    color: #8B2927 !important;
+}
 
 .Enlarged {
     height: 400px;
@@ -17,4 +17,13 @@
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+.breadCrumb{
+    background-color: #494846;
+    color: #949494;
+    text-align: right;
+    position: absolute!important;
+    bottom: 0;
+    left: 10px;
 }

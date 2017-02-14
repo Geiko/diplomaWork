@@ -27,6 +27,7 @@ namespace BookArt.Controllers
 
             var sectionId = db.Works.Find(id).SectionId;
             var sectionTitle = db.Sections.Find(sectionId).Title;
+            ViewBag.SectionID = sectionId;
 
             if (sectionTitle.Equals(BOOK_SECTION_NAME))
             {

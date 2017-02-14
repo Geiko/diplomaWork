@@ -37,12 +37,12 @@
 
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Work.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Work.SectionId)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Work.Number)
         </th>
@@ -59,12 +59,12 @@
     @foreach (var item in Model.Works)
     {
         <tr>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.SectionId)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Number)
             </td>

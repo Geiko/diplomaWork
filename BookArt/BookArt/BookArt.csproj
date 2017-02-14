@@ -315,6 +315,7 @@
     <Content Include="Areas\Admin\Views\ManagePages\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ManageAbout\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginPartialAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\ManagePages\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
     <Content Include="Scripts\Feedback\GetSendResult1.js" />

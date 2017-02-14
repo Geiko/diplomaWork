@@ -25,19 +25,15 @@ namespace BookArt.Areas.Admin.Controllers
         public ActionResult Index(string sectionTitle)
         {
             List<Work> works = new List<Work>();
-            if (sectionTitle != null)
+            if (!string.IsNullOrEmpty(sectionTitle))
             {
                 int secId = db.Sections.Where(s => s.Title.Equals(sectionTitle))
                                     .FirstOrDefault().Id;
-                works = db.Works.Where(w => w.SectionId == secId).ToList();
-            }
-            else
-            { 
-                int minId = db.Sections.OrderBy(s => s.Id).First().Id;
-                works = db.Works.Where(w => w.SectionId == minId).ToList();
+                works = db.Works.Where(w => w.SectionId == secId).OrderBy(w => w.Number).ToList();
             }
 
             List<string> sectionTitleList = db.Sections.Select(s => s.Title).ToList();
+            sectionTitleList.Insert(0, "");
 
             WorkViewModel workViewModel = new WorkViewModel
             {

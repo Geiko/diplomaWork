@@ -15,10 +15,11 @@
             int coverHeight = 160;
             int counter = 0;
             int index = 0;
+
         }
 
         @for (int i = 0; i < 3; i++)
-        {
+            {
             <div class="row">
                 <div class="col-md-8">
                     <div class="leftRow">
@@ -38,7 +39,7 @@
                         @{
                             if (counter < coverQuantity)
                             {
-                                <div  id="d1" class="sectionImg">
+                                <div id="d1" class="sectionImg">
                                     <img id="a1" class="shadow" alt="Cover"
                                          src="@Model.ElementAt(index).ImgUrl" height=@coverHeight />
                                     <span class="sectionTitle"> @Model.ElementAt(index).Number</span>
@@ -103,10 +104,17 @@
                     </div>
                 </div>
             </div>
-                            }
+        }
+
+        <span class="breadcrumb breadCrumb">
+            <a href="/Project">Проекти</a>
+            >
+            <a href="/Works/Index/@ViewBag.SectionID">Роботи</a>
+            > Сторінки
+        </span>
 
         <div class="sendButton backFromProject">
-            <a href="javascript:history.go(-1)" class="btnPro">Повернутися на попередню сторінку</a>
+            <a href="javascript:history.go(-1)" class="btnPro">Попередня сторінка</a>
         </div>
 
     </div>
