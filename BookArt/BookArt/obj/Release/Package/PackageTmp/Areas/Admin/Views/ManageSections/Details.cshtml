@@ -1,0 +1,72 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.SectionViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="topPad">Деталі розділу</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.CoverUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.CoverUrl)
+        </dd>
+    </dl>
+</div>
+
+<div class="form-group ">
+    <div class="col-md-offset-2 col-md-10 imgAdm">
+        <img alt="Section Cover" src="@Model.Section.CoverUrl" height="110" /> 
+    </div>
+</div>
+
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Роботи
+        </dt>
+        <dd>
+            @Html.DropDownList(
+                "works",
+                Model.Works as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+        </dd>
+    </dl>
+</div>
+
+
+    <p>
+        @Html.ActionLink("Редагувати", "Edit", new { id = Model.Section.Id }) |
+        @Html.ActionLink("Повернутися до переліку", "Index")
+    </p>

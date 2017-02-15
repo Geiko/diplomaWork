@@ -1,0 +1,12 @@
+
+
+.about_yourself_container{
+    width: 700px;
+    padding-top: 150px;
+    color: white;
+}
+
+.about_yourself{
+    float: left;
+    width: 150px;
+}

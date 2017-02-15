@@ -1,0 +1,61 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.PageViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="topPad">Знищити сторінку</h2>
+
+<h3>Ви впевнені, що хочете видалити це?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.WorkId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.WorkId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WorkName)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.Number)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.ImgUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.ImgUrl)
+        </dd>
+
+    </dl>
+
+    <div class="form-group ">
+        <div class="col-md-offset-2 col-md-10 imgAdm">
+            <img alt="Section Cover" src="@Model.Page.ImgUrl" height="110" />
+        </div>
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Знищити" class="btn btn-default" /> |
+            @Html.ActionLink("Повернутися до переліку", "Index")
+        </div>
+    }
+</div>

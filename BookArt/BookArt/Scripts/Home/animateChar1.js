@@ -242,6 +242,8 @@
     function createLines(KContainer, data) {
 
         var traceQuantity = (Math.round(+feather.width / +feather.thickness) + 1) * 2;
+        //var traceQuantity = (Math.round(+feather.width / +feather.thickness) + 1);
+        //var traceQuantity = 3;
 
         var xOffset = +feather.width * Math.cos(+feather.angle * Math.PI / 180);
         var yOffset = +feather.width * Math.sin(+feather.angle * Math.PI / -180);

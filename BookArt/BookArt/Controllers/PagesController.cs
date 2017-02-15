@@ -45,6 +45,7 @@ namespace BookArt.Controllers
         {
             List<Page> pages = db.Pages.Where(p => p.WorkId == id)
                                         .OrderBy(w => w.Number).ToList();
+            ViewBag.SectionID = db.Works.Find(id).SectionId;
             return View(pages);
         }
     }

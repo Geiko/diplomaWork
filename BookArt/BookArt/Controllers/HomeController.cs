@@ -11,9 +11,9 @@ namespace BookArt.Controllers
     {
         public ActionResult Index()
         {
-            if (Session["Enter"] == null)
+            if (Session["Enter"] == null) 
             {
-                Session["Enter"] = "First";
+                Session["Enter"] = "First"; 
                 ViewBag.Enter = 1;
                 return View();
             }

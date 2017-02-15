@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Scripts.Render("~/bundles/menu")
+
+<div class="enterSession">
+    <h2>@ViewBag.Enter</h2>
+</div>
+
+<div class="container-fluid wrapper_1">
+
+    <div class="charK center-block"></div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-offset-6 col-xs-4 tmp text-center cell1_1 animate2">
+                <section class="text_1">
+                    <!-- <p class='string1_1'>Кость Ткаченко</p> -->
+                    <!-- <p class='string2_1'>вільна творча одиниця</p> -->
+                    <p class='string1_1'></p>
+                    <p class='string2_1'></p>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center tmp cell1_2">
+                <nav class="str_1">
+                    <ul>
+                        <!-- <li><a href="index_projects.html">проекти</a></li> -->
+                        <!-- <li><a href="index_about_yourself.html">про себе</a></li> -->
+                        <!-- <li><a href="index_write.html">написати</a></li> -->
+                        <li>@Html.ActionLink(" ", "Index", "Project", routeValues: null, htmlAttributes: new { id = "aProjects" })</li>
+                        <li>@Html.ActionLink(" ", "About", "Home", routeValues: null, htmlAttributes: new { id = "aAbout" })</li>
+                        <li>@Html.ActionLink(" ", "Create", "Feedbacks", routeValues: null, htmlAttributes: new { id = "aWrite" })</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center tmp cell1_3">
+                <div class="dart">
+                    <!-- <a href="#anchor1"><img src="img/arrow.png" alt="arrow" /></a> -->
+                    @*<a id="aArrow" href="#anchor1"></a>*@
+
+                    @*@Html.ActionLink(" ", "Index", "Project", routeValues: null, htmlAttributes: new { id = "aArrow" })
+                        <div id="aArrow"></div>*@
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row footer animate1">
+            <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid wrapper_2" style="display: none;"></div>
+
+@Scripts.Render("~/bundles/animate")

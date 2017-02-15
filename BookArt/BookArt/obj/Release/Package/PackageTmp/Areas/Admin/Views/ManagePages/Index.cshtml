@@ -1,0 +1,90 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.PageViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="topPad">Перелік сторінок</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "filterForm" }))
+{
+
+    <div class="col-md-2 text-right">
+        Оберіть розділ:
+    </div>
+
+    <div class="col-md-2">
+        @Html.DropDownList(
+            "sectionTitle",
+            Model.Sections as SelectList,
+            htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-2 text-right">
+        Оберіть роботу:
+    </div>
+
+    <div class="col-md-6">
+        @Html.DropDownList(
+            "workName",
+            Model.Works as SelectList,
+            htmlAttributes: new { @class = "form-control" })
+    </div>
+
+    <input name="sectionFlag" id="sectionFlag" type="hidden" value="">
+}
+
+@using (Html.BeginForm("Create", "ManagePages", FormMethod.Get, new { id = "createWorkForm" }))
+{
+    <input name="secTitle" id="secTitle" type="hidden" value="">
+    <input name="worName" id="worName" type="hidden" value="">
+}
+
+<input id="createNewPage" type="button" value="Створити нову сторінку" class="btn btn-sm btn-primary" />
+
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Page.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Page.WorkId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Page.Number)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Page.ImgUrl)
+        </th>*@
+        <th>Image</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Pages)
+    {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ImgUrl)
+            </td>*@
+            <td>
+                <img alt="Page Cover" src="@item.ImgUrl" height="30" />
+            </td>
+            <td>
+                @Html.ActionLink("Редагувати", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Деталі", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Знищити", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

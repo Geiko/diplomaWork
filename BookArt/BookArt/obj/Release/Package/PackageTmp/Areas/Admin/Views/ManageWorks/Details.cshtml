@@ -1,0 +1,83 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.WorkViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="topPad">Деталі роботи</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.SectionId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.SectionId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SectionTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SectionTitle)
+        </dd>
+
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.Number)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.Name)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Work.CoverUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Work.CoverUrl)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="form-group ">
+    <div class="col-md-offset-2 col-md-10 imgAdm">
+        <img alt="Section Cover" src="@Model.Work.CoverUrl" height="110" />
+    </div>
+</div>
+
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Сторінки
+        </dt>
+        <dd>
+            @Html.DropDownList(
+                "works",
+                Model.Pages as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+        </dd>
+    </dl>
+</div>
+
+
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Work.Id }) |
+    @Html.ActionLink("Повернутися до переліку", "Index")
+</p>

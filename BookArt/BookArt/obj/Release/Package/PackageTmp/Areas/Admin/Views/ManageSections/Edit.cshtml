@@ -1,0 +1,107 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.SectionViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="topPad">Редагувати розділ</h2>
+
+@using (Html.BeginForm(null, null, new { @id = string.Empty }, FormMethod.Post, new { @id = "sectionForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Section.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Section.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Section.Id,
+                    new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.Section.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Section.Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Section.Number,
+                    new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Section.Number, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Section.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Section.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Section.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Section.CoverUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Section.CoverUrl,
+                new{htmlAttributes = new{ @class = "form-control" }})
+                @Html.ValidationMessageFor(model => model.Section.CoverUrl, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+                <input id="addUrl" type="button" value="Додати URL" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+@*---------------------------------------------------------------------------------------------*@
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            Малюнок
+        </div>
+        <div class="col-md-3">
+            <img alt="Section Cover" src="@Model.Section.CoverUrl" height="110" />
+        </div>
+        <div class="col-md-7">
+            @using (Html.BeginForm("AddCover", "ManageSections", FormMethod.Post,
+                    new { enctype = "multipart/form-data", @id = "loadImgForm" }))
+            {
+                <input name="id" id="id" type="hidden" value="@Model.Section.Id">
+                <input name="fileToUpload" id="fileToUpload" type="file" class="btn btn-xs btn-primary"><br />
+                <input name="submit" id="uploadSubmit" type="submit" value="Зберегти малюнок" class="btn btn-xs btn-primary">
+            }
+
+            @*@using (Html.BeginForm("DeleteCover", "ManageSections", FormMethod.Post))
+            {
+                <input name="id" id="id" type="hidden" value="@Model.Section.Id"><br />
+                <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
+                       class="btn btn-xs btn-primary">
+            }*@
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            Роботи
+        </div>
+        <div class="col-md-10">
+            @Html.DropDownList(
+                "works",
+                Model.Works as SelectList,
+                htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input id="saveSection" type="submit" form="sectionForm" value="Зберегти" class="btn btn-success" />
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Повернутися до переліку", "Index")
+</div>

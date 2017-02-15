@@ -1,0 +1,86 @@
+﻿@model BookArt.Models.Feedback
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container-fluid wrapper_2">
+    <div class="container covers ">
+
+        <div class="col-md-offset-6 col-md-6">
+            <h3 class="feedbackLabel feedbackTitle">Тут Ви можете залишити свій відгук</h3>
+        </div>
+
+        @using (Html.BeginForm(null, null, new { @id = string.Empty }, FormMethod.Post, new { @id = "feedbackForm" }))
+            {
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UsersEmail, htmlAttributes: new { @class = "control-label col-md-6 feedbackLabel" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.UsersEmail, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UsersEmail, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-6 feedbackLabel" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Content,
+                            new
+                            {
+                                htmlAttributes = new
+                                {
+                                    @class = "form-control textArea",
+                                    rows = 5
+                                }
+                            })
+                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <span class="control-label col-md-6 feedbackLabel">
+                        Будь ласка, доведіть що Ви не робот
+                    </span>
+                    <div class="col-md-6">
+                        <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LdjFxQUAAAAAIeLGxTtCiryDWVElF_jRo0ULgaT">
+                        </div>
+                        <span id="capthaResponsePlace" class="captchaValidation">
+                            @ViewBag.RecaptchaMessage
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <span class="control-label col-md-6 feedbackLabel feedbackResponsePlace"></span>
+                    <div class="col-md-6 sendButton">
+                        <input type="submit" value="Надіслати" id="send-feedback" class="btn btn-primary indented" />
+                    </div>
+                </div>
+            </div>
+
+        }
+
+        <div>
+            <div class="col-md-offset-6 col-md-6 sendButton">
+                <button class="feedback-return-btn btn btn-primary">
+                    Повернутися на попередню сторінку
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row footer animate1">
+        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/feedbackscripts")
+
+<script src='https://www.google.com/recaptcha/api.js'></script>

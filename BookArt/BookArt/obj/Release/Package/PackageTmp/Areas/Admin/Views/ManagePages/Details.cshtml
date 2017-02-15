@@ -1,0 +1,53 @@
+﻿@using BookArt.Areas.Admin.Models
+@model BookArt.Areas.Admin.Models.PageViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="topPad">Деталі сторінки</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.WorkId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.WorkId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.WorkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.Number)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Page.ImgUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Page.ImgUrl)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="form-group ">
+    <div class="col-md-offset-2 col-md-10 imgAdm">
+        <img alt="Section Cover" src="@Model.Page.ImgUrl" height="110" />
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Page.Id }) |
+    @Html.ActionLink("Повернутися до переліку", "Index")
+</p>

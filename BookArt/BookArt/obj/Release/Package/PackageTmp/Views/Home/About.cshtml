@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<div class="container-fluid wrapper_2">
+
+    <div class="col-sm-6 col-sm-offset-3 about_yourself_container">
+        @Html.Raw(ViewBag.AboutContent)
+    </div>
+
+    <div class="row footer animate1">
+        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
+    </div>
+
+    <div class="sendButton backFromProject">
+        <a href="javascript:history.go(-1)" class="btnPro">Попередня сторінка</a>
+    </div>
+
+</div>
