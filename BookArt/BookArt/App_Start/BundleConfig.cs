@@ -23,7 +23,7 @@ namespace BookArt
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/cssBundle").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site7.css",
                       "~/Content/CSS/style_home5.css",

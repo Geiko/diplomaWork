@@ -70,7 +70,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -237,11 +239,53 @@
     <Content Include="Content\Images\Misc\ajax-loader4.gif" />
     <Content Include="Content\Images\Misc\ajax-loader5.gif" />
     <Content Include="Content\Images\Misc\ajax-loader7.gif" />
+    <Content Include="Content\Images\Pages\PageCover_1.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_10.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_11.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_12.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_13.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_14.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_15.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_16.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_17.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_18.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_19.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_20.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_22.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_23.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_24.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_25.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_26.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_27.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_28.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_29.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_30.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_31.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_32.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_33.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_35.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_36.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_37.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_4.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_5.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_6.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_7.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_8.jpg" />
+    <Content Include="Content\Images\Pages\PageCover_9.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_1.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_2.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_21.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_24.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_26.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_27.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_28.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_3.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_30.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_31.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_32.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_4.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_5.jpg" />
+    <Content Include="Content\Images\Sections\SectionCover_58.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_6.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_7.jpg" />
     <Content Include="Content\Images\Sections\SectionCover_8.jpg" />
@@ -374,7 +418,7 @@
     <Content Include="Areas\Admin\Views\ManageAbout\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginPartialAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\ManagePages\Create.cshtml" />
-    <None Include="Properties\PublishProfiles\BookArt20170215112317 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\BookArt20170217015426 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Feedback\BackButton.js" />
     <Content Include="Scripts\Feedback\GetSendResult1.js" />
@@ -456,9 +500,7 @@
     <Content Include="Views\Pages\Index.cshtml" />
     <Content Include="Views\Pages\Books.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Images\Pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

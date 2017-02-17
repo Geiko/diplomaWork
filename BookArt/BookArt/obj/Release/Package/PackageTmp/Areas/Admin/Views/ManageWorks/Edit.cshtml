@@ -74,7 +74,8 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <div class="control-label col-md-2">            Малюнок
+        <div class="control-label col-md-2">
+            Малюнок
         </div>
         <div class="col-md-3">
             <img alt="Work Cover" src="@Model.Work.CoverUrl" height="110" />
@@ -89,11 +90,11 @@
             }
 
             @*@using (Html.BeginForm("DeleteCover", "ManageWorks", FormMethod.Post))
-            {
-                <input name="id" id="id" type="hidden" value="@Model.Work.Id"><br />
-                <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
-                       class="btn btn-xs btn-primary">
-            }*@
+                {
+                    <input name="id" id="id" type="hidden" value="@Model.Work.Id"><br />
+                    <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
+                           class="btn btn-xs btn-primary">
+                }*@
         </div>
     </div>
 

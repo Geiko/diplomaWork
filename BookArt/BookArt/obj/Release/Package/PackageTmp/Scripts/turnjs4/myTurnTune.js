@@ -9,7 +9,8 @@ $(document).ready(function () {
             //duration: 2600
 
             width: 800,
-            height: 542,
+            height: 525,
+            //height: 542,
             autoCenter: true,
             duration: 1500
             // pages: 50

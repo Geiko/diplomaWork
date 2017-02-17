@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfxh7e/1uaUCvGj2cYkDL2wAAAAACAAAAAAAQZgAAAAEAACAAAACC6JbVYuVWzHbJinvQ0wl3B8HP0vV8lW3+Kj9y7zBXWwAAAAAOgAAAAAIAACAAAADI2orLDbPmFbCwbRGP5eiG8KitmndqHVtLbF95HYXHJYAAAABJ4tWxDyn1E3k6Hn2RsbD08Wup19pRCTq0ckEe6VOY6UZPRw3vrAibyDEmZdWCIxd/q7xH9IkcaK5LwezvCPU85cbIuoZngYj1TY8W+BncFMm9P6iQj5XGK0r0KQWLUdZ8+zXfdQ2LCtPQXExu58I3Bgev6K3jboWA/hXUE8SQrEAAAACdyHNWwS1IEWqX4axIM7QgRwGUwEJBpRtSzjZuNw+2lxCCkbGrtnaipvJvEV+DwESyTVGBGYbk/8iF/htBeXkT</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <AzureDBConnectionStrings Include="Data Source=tcp:bookart20170217015426dbserver.database.windows.net,1433;Initial Catalog=BookArt20170217015426_db1;User Id=geiko@bookart20170217015426dbserver;Password=Kg16011962." />
+    <AzureDBConnectionStrings Include="Data Source=tcp:bookart20170217015426dbserver.database.windows.net,1433;Initial Catalog=BookArt20170217015426_db;User Id=geiko@bookart20170217015426dbserver;Password=Kg16011962." />
+  </ItemGroup>
+</Project>

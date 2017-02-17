@@ -68,14 +68,15 @@
 
 <div class="form-horizontal">
     <div class="form-group">
-        <div class="control-label col-md-2">            Малюнок
+        <div class="control-label col-md-2">
+            Малюнок
         </div>
         <div class="col-md-3">
             <img alt="Work Cover" src="@Model.Page.ImgUrl" height="110" />
         </div>
         <div class="col-md-7">
             @using (Html.BeginForm("AddCover", "ManagePages", FormMethod.Post,
-                new { enctype = "multipart/form-data", @id = "loadImgForm" }))
+                    new { enctype = "multipart/form-data", @id = "loadImgForm" }))
             {
                 <input name="id" id="id" type="hidden" value="@Model.Page.Id">
                 <input name="fileToUpload" id="fileToUpload" type="file" class="btn btn-xs btn-primary"><br />
@@ -83,11 +84,11 @@
             }
 
             @*@using (Html.BeginForm("DeleteCover", "ManagePages", FormMethod.Post))
-            {
-                <input name="id" id="id" type="hidden" value="@Model.Page.Id"><br />
-                <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
-                       class="btn btn-xs btn-primary">
-            }*@
+                {
+                    <input name="id" id="id" type="hidden" value="@Model.Page.Id"><br />
+                    <input name="submitDelete" id="deleteSubmit" type="submit" value="Delete Image"
+                           class="btn btn-xs btn-primary">
+                }*@
         </div>
     </div>
 </div>
@@ -97,7 +98,7 @@
 
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <input type="submit"  form="workForm"  value="Зберегти" class="btn btn-success" />
+        <input type="submit" form="workForm" value="Зберегти" class="btn btn-success" />
     </div>
 </div>
 

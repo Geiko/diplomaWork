@@ -77,3 +77,4 @@ D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Release\BookArt.Migr
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Release\BookArt.csproj.GenerateResource.Cache
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Release\BookArt.dll
 D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\obj\Release\BookArt.pdb
+D:\My\IT\STEP\25. DIPLOM\gh\diplomaWork\BookArt\BookArt\bin\System.Web.Routing.dll
