@@ -1,5 +1,6 @@
 ﻿'use strict';
 $(document).ready(function () {
+
     (function () {
 
         $("#flipbook").turn({
@@ -8,9 +9,9 @@ $(document).ready(function () {
             //autoCenter: false,
             //duration: 2600
 
-            width: 800,
-            height: 525,
-            //height: 542,
+            width: 694,
+            //height: 525,
+            height: 470,
             autoCenter: true,
             duration: 1500
             // pages: 50
@@ -21,5 +22,11 @@ $(document).ready(function () {
         });
 
     })();
+
+    //$('#flipbook div');
+    //if (yourImg && yourImg.style) {
+    //    yourImg.style.height = '100px';
+    //    yourImg.style.width = '200px';
+    //}
 });
 

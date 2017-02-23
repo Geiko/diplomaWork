@@ -29,7 +29,8 @@
 }
 
 .breadCrumbBook{
-    background-color: #494846;
+    /*background-color: #494846;*/
+    background-color: initial;
     color: #949494;
     text-align: right;
     position: absolute!important;
@@ -37,4 +38,27 @@
     bottom: 0;
     /*left: 50px;*/
     left: 0;
+    /*color: #caabab;*/
+}
+
+.breadCrumbPage{
+    background-color: initial;
+}
+
+.breadCrumbBook a,
+.breadCrumb a {
+    color: #caabab;
+}
+
+.breadCrumbBook a:hover,
+.breadCrumb a:hover {
+    color: white;
+}
+
+.backFromProject a{
+    color: #caabab;
+}
+
+.backFromPage a{
+    background-color: initial;
 }

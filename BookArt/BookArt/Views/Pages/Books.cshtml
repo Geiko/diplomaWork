@@ -14,7 +14,7 @@
 
             @foreach (var item in Model)
             {
-                <div style="background-image:url(@item.ImgUrl);"></div>
+                <div style="background-image:url(@item.ImgUrl); background-size: cover;"></div>
 
                 if (counter == 0 || counter == Model.Count() - 2)
                 {
@@ -32,7 +32,7 @@
             > Сторінки
         </span>
 
-        <div class="sendButton backFromProject">
+        <div class="sendButton backFromProject backFromPage">
             <a href="javascript:history.go(-1)" class="btnPro">Попередня сторінка</a>
         </div>
     </div>
