@@ -3,6 +3,7 @@ using System.Web.Mvc;
 
 namespace BookArt.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ManageAboutController : Controller
     {
         // GET: Admin/ManageAbout

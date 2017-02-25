@@ -22,7 +22,7 @@ namespace BookArt.Models
 
             // создаем пользователей
             var admin = new ApplicationUser { Email = "k.i.geiko@gmail.com", UserName = "k.i.geiko@gmail.com" };
-            string password = "abc123.";
+            string password = "abc123."; // Azure "Kg16011962."
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно

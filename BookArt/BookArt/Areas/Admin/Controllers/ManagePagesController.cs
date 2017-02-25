@@ -12,6 +12,7 @@ using System.IO;
 
 namespace BookArt.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ManagePagesController : Controller
     {
         private SectionDBContext db = new SectionDBContext();

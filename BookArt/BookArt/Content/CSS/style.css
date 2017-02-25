@@ -62,3 +62,7 @@
 .backFromPage a{
     background-color: initial;
 }
+
+#UsersEmail, #Content {
+    width: 300px;
+}
