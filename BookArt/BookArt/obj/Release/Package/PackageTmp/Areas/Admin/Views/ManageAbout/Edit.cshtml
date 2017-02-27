@@ -7,28 +7,63 @@
 <h2 class="topPad">Про себе</h2>
 <hr />
 
-@using (Html.BeginForm())
+@*---------------------------------------------------------------------------------------------*@
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="control-label col-md-2">
+            <b>
+                Тут можна змінити фото:
+            </b>
+        </div>
+        <div class="col-md-3">
+            <img alt="Section Cover" src="/Content/Images/Misc/KostPhoto.JPG" height="100" />
+        </div>
+        <div class="col-md-7">
+            @using (Html.BeginForm("AddPhoto", "ManageAbout", FormMethod.Post,
+                    new { enctype = "multipart/form-data", @id = "loadImgForm" }))
+            {
+                <input name="fileToUpload" id="fileToUpload" type="file" class="btn btn-xs btn-primary"><br />
+                <input name="submit" id="uploadSubmit" type="submit" value="Зберегти малюнок" class="btn btn-xs btn-primary">
+            }
+        </div>
+    </div>
+</div>
+@*---------------------------------------------------------------------------------------------*@
+
+@using (Html.BeginForm(null, null, new { @id = string.Empty }, FormMethod.Post, new { @id = "aboutForm" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="editor-field">
-        <p><b>Тут можна змінити вміст сторінки:</b></p>
+        <p>
+            <b>
+                Тут можна змінити вміст сторінки:
+            </b>
+        </p>
         @Html.TextAreaFor(x => x.AboutContent, new
    {
-       rows = "17",
+       rows = "14",
        cols = "100"
    })
         @Html.ValidationMessageFor(model => model.AboutContent)
         <br /><br />
 
-        <div class="row">
-            <div class="col-md-2">
-                <input type="submit" value="Відправити" class="btn btn-primary">
-            </div>
-            <div class="col-md-10">
-                <p>@Model.Result</p>
-            </div>
-        </div>
     </div>
 }
+
+
+
+
+<div class="row">
+    <div class="col-md-2">
+        <input type="submit" form="aboutForm" value="Відправити" class="btn btn-success" />
+    </div>
+    <div class="col-md-10">
+        <p>
+            <b>
+                @Model.Result
+            </b>
+        </p>
+    </div>
+</div>

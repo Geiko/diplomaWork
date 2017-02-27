@@ -14,7 +14,7 @@ namespace BookArt.Controllers
     public class WorksController : Controller
     {
         private SectionDBContext db = new SectionDBContext();
-        private const string BOOK_SECTION_NAME = "Книга";
+        //private const string BOOK_SECTION_NAME = "Книга";
         int PAGE_SIZE = 8;
 
 

@@ -66,3 +66,13 @@
 #UsersEmail, #Content {
     width: 300px;
 }
+
+#send-feedback, #back-feedback{
+    background-color:  #494846;
+    border: 1px solid #494846;
+    color: #caabab;
+}
+
+#send-feedback:hover, #back-feedback:hover{
+    color: white;
+}

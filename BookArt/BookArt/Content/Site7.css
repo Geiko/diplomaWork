@@ -26,6 +26,9 @@ textarea {
 .topPad{
     padding-top: 50px;
 }
+.topPadLog{
+    padding: 100px 0 0 160px;
+}
 .adminDashboard{
     height: 600px;
     border-right: 2px solid gray; 

@@ -95,7 +95,8 @@ namespace BookArt.Controllers
         {
             //var response = Request["g-recaptcha-response"]; 
             var response = CaptchaResponse;
-            // for localhost // string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp"; 
+            // for localhost 
+            // string secretKey = "6LdjFxQUAAAAAOl-wMwhNg3vrieixjMOfcNZ1Elp"; 
             string secretKey = "6LeV9RUUAAAAAL1rpipumYXsJTXr1LBHs2sJaMZ7";
             var client = new WebClient();
             var result = client.DownloadString(string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secretKey, response));
