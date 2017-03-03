@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="bezier-svg-d3-generator" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\My\\IT\\Job\\REAL\\30\.\ BezierSvgD3Generator\\bezier-svg-d3-generator\\bezier-svg-d3-generator\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\My\\IT\\Job\\REAL\\30\.\ BezierSvgD3Generator\\bezier-svg-d3-generator\\bezier-svg-d3-generator\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

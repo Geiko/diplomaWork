@@ -8,9 +8,11 @@
         @Html.Raw(ViewBag.AboutContent)
     </div>
 
-    <div class="row footer animate1">
-        <p> &copy; @DateTime.Now.Year - Дніпро, Україна</p>
-    </div>
+    <a href="http://bezier-svg-d3-generator.azurewebsites.net/">
+        <p class="footer menuDelete">
+            &copy; @DateTime.Now.Year - Дніпро, Україна
+        </p>
+    </a>
 
     <div class="sendButton backFromProject">
         <a href="javascript:history.go(-1)" class="btnPro">Попередня сторінка</a>

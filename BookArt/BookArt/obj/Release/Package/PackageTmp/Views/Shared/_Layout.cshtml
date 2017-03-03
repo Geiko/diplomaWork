@@ -42,9 +42,11 @@
 
     @RenderBody()
 
-    <p class="footer footerToDelete">
-        @*&copy; @DateTime.Now.Year - Дніпро, Україна*@
-    </p>
+    <a href="#">
+        <p class="footer footerToDelete">
+            @*&copy; @DateTime.Now.Year - Дніпро, Україна*@
+        </p>
+    </a>
 
     @RenderSection("scripts", required: false)
 </body>

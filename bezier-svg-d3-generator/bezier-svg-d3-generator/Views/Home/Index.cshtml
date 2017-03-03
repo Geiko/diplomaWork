@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg
+                    col-md-10 col-md
+                    col-sm-12 col-sm
+                    col-xs-12">
+            <div class="lang">
+                <select id="language">
+                    <option value="0" selected>English</option>
+                    <option value="1">Russian</option>
+                    <option value="2">Ukrainian</option>
+                </select>
+            </div>
+
+            <div class="adjustPlate">
+                <input type='button' id='adjustPlateButton' class="btn btn-default btn-xs" value="Sheet" />
+            </div>
+            <div class="adjustDots">
+                <input type='button' id='adjustDotsButton' class="btn btn-default btn-xs" value="Dots" />
+            </div>
+            <div class="adjustLine">
+                <input type='button' id='adjustLineButton' class="btn btn-default btn-xs" value="Curve" />
+            </div>
+
+            <div class="svg-container" id="clock">
+                <svg version="1.1" viewBox="0 0 500 500"
+                     preserveAspectRatio="xMinYMin meet" class="svg-content">
+                </svg>
+                @*----------------------------*@
+                <div class='menuStyle'>
+                    <label id='getvalLabel' for='getval' class='btn btn-default btn-xs setBackground'>Upload Dummy</label>
+                    <input type='file' id='getval' />
+                    @*<button id='deleteImg' type='button' class='btn btn-default btn-xs'>Delete Dummy</button>*@
+                    <div class='setSvgOpacityDiv'>
+                        <span class="opacityMenu">Opacity:</span>
+                        <input id='setSvgOpacity' name='opacity' type='number' min='0' max='1' step='0.01'>
+                    </div>
+                    <input id='colorPickerButton' value='Color' type='button' class='btn btn-default btn-xs colorPic'>
+                </div>
+                @*----------------------------*@
+                <div class='menuDotStyle'>
+                    <div class='setDotsRadiusDiv'>
+                        <span class="dotsRadiusMenu">Radius:</span>
+                        <input id='setDotsRadius' type='number' min='0' max='100' step='1'>
+                    </div>
+                    <div class='setDotsOpacityDiv'>
+                        <span class="opacityMenu">Opacity:</span>
+                        <input id='setDotsOpacity' type='number' min='0' max='1' step='0.01'>
+                    </div>
+                    <input id='dotsColorPickerButton' value='Color' type='button' class='btn btn-default btn-xs colorPic'>
+                </div>
+                @*----------------------------*@
+                <div class='menuCurveStyle'>
+                    <div class='setCurveMaxWidthDiv'>
+                        <span class="curveMaxWidthMenu">Max <span class="curveWidthMenu">Width:</span></span>
+                        <input id='setCurveMaxWidth' type='number' min='1' max='500' step='1'>
+                    </div>
+                    <div class='setCurveMinWidthDiv'>
+                        <span class="curveMinWidthMenu">Min <span class="curveWidthMenu">Width:</span></span>
+                        <input id='setCurveMinWidth' type='number' min='0.1' max='500' step='0.1'>
+                    </div>                    
+                    <div class='setCurvAngleDiv'>
+                        <span class="curveAnglehMenu">Feather Angle,<br /> degree:</span>
+                        <input id='setCurveAngle' type='number' min='-360' max='360' step='1'>
+                    </div>
+                    <div class='setCurveOpacityDiv'>
+                        <span class="opacityMenu">Opacity:</span>
+                        <input id='setCurveOpacity' type='number' min='0' max='1' step='0.01'>
+                    </div>
+                    <input id='curveColorPickerButton' value='Color' type='button' class='btn btn-default btn-xs colorPic'>
+                </div>
+
+                @*Default Values*@
+                <div>
+                    <input type="hidden" id="dotsOpacityDefault" value="0.8" />
+                    <input type="hidden" id="dotsColorDefault" value="#00AABB" />
+                    <input type="hidden" id="dotsRadiusDefault" value="10" />
+
+                    <input type="hidden" id="curveOpacityDefault" value="0.7" />
+                    <input type="hidden" id="curveColorDefault" value="#FF0088" />
+                    <input type="hidden" id="curveMaxWidthDefault" value="18" />
+                    <input type="hidden" id="curveMinWidthDefault" value="2" />
+                    <input type="hidden" id="curveAngleDefault" value="35" />
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-lg
+                    col-md-2 col-md
+                    col-sm-12 col-sm
+                    col-xs-12">
+            <h2>
+                <b>
+                    <span id="TitleSpan">
+                        Transform a dummy to JSON (using Bézier curves)
+                    </span>
+                </b>
+            </h2>
+            <textarea id="dataPlace" rows="4" cols="25"></textarea>
+            <p>
+                <b>Double click</b><span id="dblClick"></span><br />
+                <b>Ctrl + click</b><span id="deleteDot"></span><br />
+                <b>Drag-and-drop</b><span id="dragDot"></span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="charK"></div>

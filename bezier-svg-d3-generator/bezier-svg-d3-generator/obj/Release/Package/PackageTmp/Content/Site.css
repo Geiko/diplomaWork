@@ -1,0 +1,193 @@
+﻿body {
+    padding: 0 30px 10px 60px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#TitleSpan{
+    color: #00AABB;
+}
+
+.svg-container {     
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 70%; 
+	vertical-align: middle; 
+	overflow: hidden; 
+
+    margin-top: 30px;
+    border:1px solid gray;
+
+    /*background-image: url('');*/
+    background-size: contain;
+    background-position:  center;
+    background-repeat: no-repeat;
+}
+
+.svg-content { 
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+    opacity: 0.8;
+
+    background-color: rgb(248, 248, 248);
+}
+
+.charK{
+    position: fixed;
+    top: 5px;
+    left: 2px;
+}
+
+.lang{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+}
+
+.adjustPlate{
+    position: absolute;
+    top: 4px;
+    left: 110px;
+}
+
+.adjustDots{
+    position: absolute;
+    top: 4px;
+    left: 165px;
+}
+
+.adjustLine{
+    position: absolute;
+    top: 4px;
+    left: 213px;
+}
+
+.menuStyle{
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    width: auto;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    visibility: hidden;
+    padding: 15px;
+    border: 1px solid grey;
+}
+
+.menuDotStyle{
+    position: absolute;
+    top: 0px;
+    left: 80px;
+    width: auto;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    visibility: hidden;
+    padding: 15px;
+    border: 1px solid grey;
+}
+
+.menuCurveStyle{
+    position: absolute;
+    top: 0px;
+    left: 120px;
+    width: auto;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    visibility: hidden;
+    padding: 15px;
+    border: 1px solid grey;
+}
+
+#getval{
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.setCurveMinWidthDiv,
+.setCurvAngleDiv,
+.setSvgOpacityDiv,
+.setDotsOpacityDiv,
+.setCurveOpacityDiv{
+    margin: 15px 0;
+}
+
+#curveColorPickerButton,
+#dotsColorPickerButton,
+.setBackground,
+#colorPickerButton,
+#deleteImg,
+#language,
+#adjustPlateButton,
+#adjustDotsButton,
+#adjustLineButton {
+    background-color: #BBBBBB!important;
+    color: white!important;
+}
+
+#curveColorPickerButton:hover,
+#dotsColorPickerButton:hover,
+.setBackground:hover,
+#colorPickerButton:hover,
+#deleteImg:hover,
+#language:hover,
+#adjustPlateButton:hover,
+#adjustDotsButton:hover,
+#adjustLineButton:hover{
+    background-color: #00AABB!important;
+    color: white!important;
+}
+
+body > footer{
+    position: fixed;
+    top: 0;
+    right: 100%;
+    padding: .5em 3em;
+    white-space: nowrap;
+    font-size: 120%;
+    color: rgba(0, 0, 0, .1);
+    -moz-transform: rotate(-90deg);
+    -moz-transform-origin: top right;
+    -ms-transform: rotate(-90deg);
+    -ms-transform-origin: top right;
+    -o-transform: rotate(-90deg);
+    -o-transform-origin: top right;
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: top right;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+}
+
+.aboutRef{
+    color: #BBBBBB;
+}
+
+.aboutRef:hover{
+    /*color: #FF0088;*/
+    color: #00AABB!important;
+    text-decoration: none!important;
+}
+
+.donButton{
+    padding: .5em .6em;
+    color: white;
+    text-decoration: none!important;
+    font-size: 65%;
+    background: #BBBBBB;
+}
+
+.donButton:hover{
+    color: white;
+    /*background: #FF0088;*/
+    background-color: #00AABB!important;
+}
